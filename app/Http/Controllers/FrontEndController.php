@@ -11,4 +11,9 @@ class FrontEndController extends Controller
     {
         return view('register');
     }
+
+    public static function Login()
+    {
+        return view('login');
+    }
 }

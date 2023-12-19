@@ -21,4 +21,6 @@ Route::get('/', function () {
 });
 
 Route::get('/register', [FrontEndController::class, 'Register']);
+Route::get('/login', [FrontEndController::class, 'Login']);
 Route::post('/register', [BackEndController::class, 'Register']);
+Route::post('/login', [BackEndController::class, 'Login']);

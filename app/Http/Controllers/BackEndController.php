@@ -26,6 +26,26 @@ class BackEndController extends Controller
 
         User::create($validatedRequest);
 
-        return redirect('/register');
+        return redirect('/login');
+    }
+
+    public static function Login(Request $request) : RedirectResponse
+    {
+        $validatedRequest = $request->validate([
+            'email' => ['required'],
+            'password'=> ['required']
+        ]);
+
+        if(Auth::attempt($validatedRequest))
+        {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/register');
+        }
+
+        return back()->withErrors([
+            'login' => Hash::make('Reffah08032007')
+        ]);
+
     }
 }
