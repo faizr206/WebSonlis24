@@ -1,0 +1,32 @@
+
+.rotate{
+    animation: rot 5s   infinite  linear;
+}
+.strokeme {
+  color: #3b73b9;
+  background-color: #def2fd;
+  text-shadow: -5px -5px 0 #ffffff, 5px -5px 0 #ffffff, -5px 5px 0 #ffffff, 5px 5px 0 #ffffff;
+}
+
+@keyframes rot{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.one{
+    left: 50vw;
+    animation: animOne 2s infinite ease-in-out;
+}
+
+@keyframes animOne {
+    from{
+        transform: translateX(0);
+    }   
+    to{
+        transform: translateX(200px);
+    }
+}
