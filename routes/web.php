@@ -22,5 +22,8 @@ Route::get('/', function () {
 
 Route::get('/register', [FrontEndController::class, 'Register']);
 Route::get('/login', [FrontEndController::class, 'Login']);
+Route::get('/lomba', [FrontEndController::class, 'Lomba'])->middleware('auth');
+Route::get('/lomba/{competition}', [FrontEndController::class, 'Competition'])->middleware('auth');
 Route::post('/register', [BackEndController::class, 'Register']);
 Route::post('/login', [BackEndController::class, 'Login']);
+Route::post('/lomba/{competition}', [BackEndController::class, 'Competition']);
