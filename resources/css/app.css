@@ -1,3 +1,22 @@
+@import url('https://fonts.cdnfonts.com/css/motley-forces');
+@import url('https://fonts.cdnfonts.com/css/sunday-grapes');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components{
+    .navbtn{
+        @apply bg-slate-400 rounded-lg py-1 px-2 w-24 text-center
+    }
+
+    .countdown{
+        @apply flex flex-col items-center justify-center
+    }
+
+    .cntnum{
+        @apply text-9xl
+    }
+}
