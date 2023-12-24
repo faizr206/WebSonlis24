@@ -17,16 +17,34 @@
     }
 }
 
-.one{
-    left: 50vw;
-    animation: animOne 2s infinite ease-in-out;
+.content{
+    transition: 0.5s ease-in-out;
+    transform-style: preserve-3d;
+}
+.card:hover .content{
+    transform: rotateY(180deg);
+}
+.back{
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+}
+.front, .back{
+    backface-visibility: hidden;
 }
 
-@keyframes animOne {
-    from{
-        transform: translateX(0);
-    }   
-    to{
-        transform: translateX(200px);
-    }
+.one-one{
+    transform: rotateZ(12deg);
+    transition: 0.3s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.one-two{
+    transform: rotateZ(0deg);
+    transition: 0.3s ease-in-out;
+}
+
+.one-three{
+    transform: rotateZ(-12deg);
+    transition: 0.3s ease-in-out;
 }

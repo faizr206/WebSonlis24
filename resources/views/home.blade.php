@@ -24,7 +24,8 @@
     <div class="relative">
         <img src="{{ url('/img/batasAtas.png') }}" class="absolute -translate-y-[5vw] w-[200vw]" alt="">
         <div class="container text-3xl z-10 pt-[5vw]">
-            <h1 id="headline" class="text-center pb-[3vw]">REGISTRATION CLOSED IN</h1>
+            <h1 id="headline" class="text-center text-[4vw] font-sunday text-[#7fb051] pb-[3vw]">REGISTRATION
+                CLOSED IN</h1>
             <div id="countdown" class="flex justify-center">
                 <ul class="w-3/4 grid grid-cols-7 items-center justify-center">
                     <li class="countdown"><span class="cntnum" id="days"></span>days</li>
@@ -48,19 +49,43 @@
             </div>
         </div>
         <div class="pt-[2vw] bg-[#def2fd]">
-            <h1 class="bg-red-900 text-center text-[6vw] font-sunday text-[#3b73b9] strokeme">COMPETITION
+            <h1 class=" text-center text-[6vw] font-sunday text-[#3b73b9] strokeme">COMPETITION
             </h1>
             <div
-                class="flex flex-row justify-center items-center gap-x-10 font-montserrat font-bold text-3xl text-[#3b73b9]">
+                class="flex flex-row justify-center items-center gap-x-10 font-montserrat font-bold text-3xl text-[#3b73b9] p-5">
                 <button href="#">SMP</button>
                 <button href="#">SMA</button>
             </div>
             <div id="lombaSMP">
-                <div class="bg-[#c4dcae] flex flex-col justify-center items-center">
+                <div class="bg-[#c4dcae] flex flex-col justify-center items-center" onmouseenter="enterSaintek()"
+                    onmouseleave="leaveSaintek()">
                     <img src="{{ url('/img/jenis/saintek.png') }}" alt="" class="w-1/4 mt-5 mb-8">
-                    <div class="relative w-full justify-center">
-                        <div class="absolute w-[10%] drop-shadow-2xl one">
-                            <img src="{{ url('/img/lomba/soccer.png') }}" class="w-full" alt="">
+                    <div class="relative w-full">
+                        <div id="one-one" class="absolute w-[10%] drop-shadow-2xl left-[47vw] one-one card">
+                            <div class="content">
+                                <div class="front"><img src="{{ url('/img/lomba/soccer.png') }}" class="w-full"
+                                        alt=""></div>
+                                <div class="back">
+                                    Halo
+                                </div>
+                            </div>
+                        </div>
+                        <div id="one-two" class="absolute w-[10%] drop-shadow-2xl left-[45vw] one-two card">
+                            <div class="content">
+                                <div class="front"><img src="{{ url('/img/lomba/soccer.png') }}" class="w-full"
+                                        alt="">
+                                </div>
+                                <div class="back">Halo</div>
+                            </div>
+                        </div>
+                        <div id="one-three"
+                            class="absolute w-[10%] drop-shadow-2xl left-[43vw] z-50 -rotate-12 one-three card">
+                            <div class="content">
+                                <div class="front">
+                                    <img src="{{ url('/img/lomba/soccer.png') }}" class="w-full" alt="">
+                                </div>
+                                <div class="back">Halo</div>
+                            </div>
                         </div>
                     </div>
                     <div class=" pt-[20vw]">-</div>
