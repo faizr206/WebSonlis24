@@ -17,6 +17,10 @@
     }
 
     .cntnum{
-        @apply text-9xl
+        @apply text-[9vw] pb-[3vw]
+    }
+
+    .sacbtn{
+        @apply text-lg bg-[#d89f38] rounded-lg p-2 font-montserrat text-white 
     }
 }

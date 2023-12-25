@@ -13,6 +13,50 @@ function leaveSaintek() {
         "translateX(0) rotateZ(-12deg) translateY(0)";
 }
 
+function enterSac() {
+    document.getElementById("two-one").style.transform =
+        "translateX(10vw) rotateZ(0deg) translateY(1vw)";
+    document.getElementById("two-two").style.transform = "translateY(1vw)";
+    document.getElementById("two-three").style.transform =
+        "translateX(-10vw) rotateZ(0deg) translateY(1vw) rotateY(0)";
+}
+function leaveSac() {
+    document.getElementById("two-one").style.transform =
+        "translateX(0) rotateZ(12deg) translateY(0)";
+    document.getElementById("two-two").style.transform = "translateY(0)";
+    document.getElementById("two-three").style.transform =
+        "translateX(0) rotateZ(-12deg) translateY(0)";
+}
+
+function enterLang() {
+    document.getElementById("three-one").style.transform =
+        "translateX(10vw) rotateZ(0deg) translateY(1vw)";
+    document.getElementById("three-two").style.transform = "translateY(1vw)";
+    document.getElementById("three-three").style.transform =
+        "translateX(-10vw) rotateZ(0deg) translateY(1vw) rotateY(0)";
+}
+function leaveLang() {
+    document.getElementById("three-one").style.transform =
+        "translateX(0) rotateZ(12deg) translateY(0)";
+    document.getElementById("three-two").style.transform = "translateY(0)";
+    document.getElementById("three-three").style.transform =
+        "translateX(0) rotateZ(-12deg) translateY(0)";
+}
+
+function enterJournal() {
+    document.getElementById("four-one").style.transform =
+        "translateX(10vw) rotateZ(0deg) translateY(1vw)";
+    document.getElementById("four-two").style.transform = "translateY(1vw)";
+    document.getElementById("four-three").style.transform =
+        "translateX(-10vw) rotateZ(0deg) translateY(1vw) rotateY(0)";
+}
+function leaveJournal() {
+    document.getElementById("four-one").style.transform =
+        "translateX(0) rotateZ(12deg) translateY(0)";
+    document.getElementById("four-two").style.transform = "translateY(0)";
+    document.getElementById("four-three").style.transform =
+        "translateX(0) rotateZ(-12deg) translateY(0)";
+}
 (function () {
     const second = 1000,
         minute = second * 60,
