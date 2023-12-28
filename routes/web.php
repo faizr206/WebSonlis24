@@ -16,14 +16,13 @@ use App\Http\Controllers\BackEndController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/register', [FrontEndController::class, 'Register']);
-Route::get('/login', [FrontEndController::class, 'Login']);
+Route::get('/', [FrontEndController::class, 'Main'])->middleware('auth');
+Route::get('/register', [FrontEndController::class, 'Register'])->middleware('guest');
+Route::get('/login', [FrontEndController::class, 'Login'])->middleware('guest');
 Route::get('/lomba', [FrontEndController::class, 'Lomba'])->middleware('auth');
-Route::get('/lomba/{competition}', [FrontEndController::class, 'Competition'])->middleware('auth');
+Route::get('/lomba/{team}', [FrontEndController::class, 'Team'])->middleware('auth');
 Route::post('/register', [BackEndController::class, 'Register']);
 Route::post('/login', [BackEndController::class, 'Login']);
-Route::post('/lomba/{competition}', [BackEndController::class, 'Competition']);
+Route::post('/addTeam', [BackEndController::class, 'AddTeam']);
+Route::post('/addParticipant', [BackEndController::class, 'AddParticipant']);
+Route::post('/lomba/{team}', [BackEndController::class, 'Team'])->middleware('auth');

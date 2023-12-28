@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
-use App\Models\Participant;
 use App\Models\Competition;
+use App\Models\Team;
+use App\Models\Participant;
 
 class BackEndController extends Controller
 {
@@ -51,21 +52,34 @@ class BackEndController extends Controller
 
     }
 
-    public static function Competition(Request $request, $competition)
+    public static function AddTeam(Request $request)
     {
-        $competitionData = Competition::all()->where('name', $competition)->first();
+        $competition = Competition::where('name', $request->competitionName)->first();
 
-        for($i = 0; $i < $competitionData->peserta; $i++)
-        {
-            $validatedRequest = $request->validate([
-                'peserta' . $i => 'required'
-            ]);
-            $validatedRequest['name'] = $validatedRequest['peserta' . $i];
-            $validatedRequest['user_id'] = Auth::user()->id;
-            $validatedRequest['competition_id'] = $competitionData->id;
+        $team = Team::create([
+            'user_id' => Auth::user()->id,
+            'competition_id' => $competition->id
+        ]);
 
-            Participant::create($validatedRequest);
+        return back();
+    }
+
+    public static function AddParticipant(Request $request)
+    {
+        $participant = Participant::create([
+            'team_id' => $request->team,
+            'name' => "unnamed"
+        ]);
+        return back();
+    }
+
+    public static function Team(Request $request)
+    {
+        $team = Team::all()->where('id', $request->team)->first();
+        foreach ($team->participants as $participant) {
+            $participant->update(['name' => ($request[$participant->id]!="")? $request[$participant->id] : $participant->name]);
         }
-        return redirect('/lomba');
+
+        return back();
     }
 }

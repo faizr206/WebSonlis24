@@ -47,5 +47,10 @@ class DatabaseSeeder extends Seeder
             'jenjang' => 'SMP',
             'peserta' => 1,
         ]);
+
+        \App\Models\Team::create([
+            'user_id' => 1,
+            'competition_id' => 1
+        ]);
     }
 }

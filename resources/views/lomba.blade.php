@@ -7,21 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    @if(!isset($competition))
-        @foreach($competitions as $competition)
-        <a href="lomba/{{$competition->name}}">
-            {{$competition->name}}
-        </a><br>
+    <div>
+        @foreach($teams as $team)
+            <a href="/lomba/{{$team->id}}">{{$team->id}}</a><br>
         @endforeach
-    @else
-        <form method="POST">
-            @csrf
-            @for ($i = 0; $i < $competition->peserta; $i++)
-                <input type="text" name="peserta{{$i}}" placeholder="peserta{{$i + 1}}">
-            @endfor
-            {{$errors}}
-            <button type="submit">Submit</button>
-        </form>
-    @endif
+    </div>
+    <form method="POST" action="/add">
+        @csrf
+        <select name="competitionName">
+            <option></option>
+            @foreach($competitions as $competition)
+            <option name="{{$competition->name}}">{{$competition->name}}</option>
+            @endforeach
+        </select>
+        <button type="submit">tambah</button>
+    </form>
 </body>
 </html>

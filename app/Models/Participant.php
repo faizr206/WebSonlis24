@@ -12,8 +12,12 @@ class Participant extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'user_id',
-        'competition_id',
+        'team_id',
         'name'
     ];
+
+    public function team()
+    {
+        return $this->belongsTo('App\Models\Team');
+    }
 }
