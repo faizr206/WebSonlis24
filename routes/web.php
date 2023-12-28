@@ -23,6 +23,7 @@ Route::get('/lomba', [FrontEndController::class, 'Lomba'])->middleware('auth');
 Route::get('/lomba/{team}', [FrontEndController::class, 'Team'])->middleware('auth');
 Route::post('/register', [BackEndController::class, 'Register']);
 Route::post('/login', [BackEndController::class, 'Login']);
+Route::post('/logout', [BackEndController::class, 'Logout']);
 Route::post('/addTeam', [BackEndController::class, 'AddTeam']);
 Route::post('/addParticipant', [BackEndController::class, 'AddParticipant']);
 Route::post('/lomba/{team}', [BackEndController::class, 'Team'])->middleware('auth');
