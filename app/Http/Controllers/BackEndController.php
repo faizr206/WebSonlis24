@@ -43,13 +43,8 @@ class BackEndController extends Controller
         {
             $request->session()->regenerate();
 
-            return redirect()->intended('/lomba');
+            return redirect()->intended('/home');
         }
-
-        return back()->withErrors([
-            'login' => Hash::make('Reffah08032007')
-        ]);
-        
     }
     
     public static function Logout(Request $request)
