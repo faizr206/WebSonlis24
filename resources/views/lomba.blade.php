@@ -12,7 +12,14 @@
             <a href="/lomba/{{$team->id}}">{{$team->id}}</a><br>
         @endforeach
     </div>
-    <form method="POST" action="/add">
+    @foreach ($teams as $team)
+    <form method="POST" action="/deleteTeam">
+        @csrf
+        <input type="hidden" name="team" value="{{$team->id}}">
+        <button type="submit">Delete {{$team->id}}</button>
+    </form>
+    @endforeach
+    <form method="POST" action="/addTeam">
         @csrf
         <select name="competitionName">
             <option></option>

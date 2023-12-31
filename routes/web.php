@@ -25,6 +25,7 @@ Route::post('/register', [BackEndController::class, 'Register']);
 Route::post('/login', [BackEndController::class, 'Login']);
 Route::post('/logout', [BackEndController::class, 'Logout']);
 Route::post('/addTeam', [BackEndController::class, 'AddTeam']);
+Route::post('/deleteTeam', [BackEndController::class, 'DeleteTeam']);
 Route::post('/addParticipant', [BackEndController::class, 'AddParticipant']);
 Route::post('/deleteParticipant', [BackEndController::class, 'DeleteParticipant']);
 Route::post('/lomba/{team}', [BackEndController::class, 'Team'])->middleware('auth');

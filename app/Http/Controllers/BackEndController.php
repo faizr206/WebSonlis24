@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
 use App\Models\Competition;
-use App\Models\Team;
 use App\Models\Participant;
+use App\Models\Team;
 
 class BackEndController extends Controller
 {
@@ -64,6 +64,17 @@ class BackEndController extends Controller
         return back();
     }
 
+    public static function DeleteTeam(Request $request)
+    {
+        $team = Auth::user()->teams->where('id', $request->team)->first();
+        foreach($team->participants as $participant)
+        {
+            $participant->delete();
+        }
+        $team->delete();
+        return back();
+    }
+
     public static function AddParticipant(Request $request)
     {
         $participant = Participant::create([
@@ -75,7 +86,11 @@ class BackEndController extends Controller
 
     public static function DeleteParticipant(Request $request)
     {
-        Participant::where('id', $request->participant)->delete();
+        $participant = Participant::where('id', $request->participant)->first();
+        if($participant->team->user == Auth::user())
+        {
+            $participant->delete();
+        }
         return back();
     }
 
