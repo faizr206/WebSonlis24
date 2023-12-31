@@ -1,4 +1,13 @@
-
+@media only screen and (max-width:767px){
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      scroll-behavior: smooth;
+    }
+}
 .rotate{
     animation: rot 5s   infinite  linear;
 }
@@ -8,12 +17,34 @@
   text-shadow: -5px -5px 0 #ffffff, 5px -5px 0 #ffffff, -5px 5px 0 #ffffff, 5px 5px 0 #ffffff;
 }
 
+.stroke{
+  color: #ffffff;
+  text-shadow: -2px -2px 0 #7fb051, 2px -2px 0 #7fb051, -2px 2px 0 #7fb051, 2px 2px 0 #7fb051;
+}
+
+.blade1{
+    animation: rot 10s infinite linear  ;
+}
+
+.blade2{
+    animation: rot2 10s infinite linear  ;
+}
+
 @keyframes rot{
     from{
-        transform: rotate(0deg);
+        transform: translateY(-10vw) translateX(-3vw) rotateZ(0deg);
     }
     to{
-        transform: rotate(360deg);
+        transform: translateY(-10vw) translateX(-3vw) rotateZ(360deg);
+    }
+}
+
+@keyframes rot2{
+    from{
+        transform: translateY(-11vw) translateX(93vw) rotateZ(0deg);
+    }
+    to{
+        transform: translateY(-11vw) translateX(93vw) rotateZ(360deg);
     }
 }
 
@@ -34,17 +65,77 @@
 }
 
 .one-one{
-    transform: rotateZ(12deg);
+    transform: rotateZ(-12deg);
     transition: 0.3s ease-in-out;
     transform-style: preserve-3d;
 }
 
 .one-two{
-    transform: rotateZ(0deg);
+    transform: rotateZ(-4deg);
     transition: 0.3s ease-in-out;
 }
 
 .one-three{
+    transform: rotateZ(4deg);
+    transition: 0.3s ease-in-out;
+}
+.one-four{
+    transform: rotateZ(12deg);
+    transition: 0.3s ease-in-out;
+}
+
+
+.two-one{
+    transform: rotateZ(12deg);
+    transition: 0.3s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.two-two{
+    transform: rotateZ(0deg);
+    transition: 0.3s ease-in-out;
+}
+
+.two-three{
     transform: rotateZ(-12deg);
     transition: 0.3s ease-in-out;
+}
+
+
+.three-one{
+    transform: rotateZ(12deg);
+    transition: 0.3s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.three-two{
+    transform: rotateZ(0deg);
+    transition: 0.3s ease-in-out;
+}
+
+.three-three{
+    transform: rotateZ(-12deg);
+    transition: 0.3s ease-in-out;
+}
+
+
+.four-one{
+    transform: rotateZ(12deg);
+    transition: 0.3s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.four-two{
+    transform: rotateZ(0deg);
+    transition: 0.3s ease-in-out;
+}
+
+.four-three{
+    transform: rotateZ(-12deg);
+    transition: 0.3s ease-in-out;
+}
+
+.rundown{
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3) .1em, transparent .1em), linear-gradient(90deg, rgba(255, 255, 255, 0.3) .1em, transparent .1em);
+  background-size: 3em 3em;
 }
