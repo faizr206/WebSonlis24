@@ -3,6 +3,9 @@
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\BackEndController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,11 +27,14 @@ Route::get('/home', function () {
 
 Route::get('/login', function () {
     return view('login');
-});
+})->middleware('guest');
 
 Route::get('/register', function () {
     return view('register');
-});
+})->middleware('guest');
 
 Route::get('/upload/{nama}', [UploadController::class, 'upload'])->name('upload');
 Route::post('/uploads/{nama}', [UploadController::class, 'uploadPost'])->name('upload.post');
+
+Route::post('/register', [BackEndController::class, 'Register']);
+Route::post('/login', [BackEndController::class, 'Login']);

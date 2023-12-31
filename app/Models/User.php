@@ -17,10 +17,15 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    protected $primaryKey = 'id';
+
     protected $fillable = [
-        'name',
+        'username',
         'email',
         'password',
+        'sekolah',
+        'jenjang'
     ];
 
     /**
@@ -42,4 +47,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function teams()
+    {
+        return $this->hasMany('App\Models\Team', 'user_id');
+    }
 }
