@@ -15,7 +15,7 @@ use App\Models\Team;
 
 class BackEndController extends Controller
 {
-    public static function Register(Request $request) : RedirectResponse
+    public static function Register(Request $request)
     {
         $validatedRequest = $request->validate([
             'email' => ['required', 'unique:users', 'email:dns'],
@@ -32,7 +32,7 @@ class BackEndController extends Controller
         return redirect('/login');
     }
 
-    public static function Login(Request $request) : RedirectResponse
+    public static function Login(Request $request)
     {
         $validatedRequest = $request->validate([
             'email' => ['required'],
@@ -49,7 +49,38 @@ class BackEndController extends Controller
         return back()->withErrors([
             'login' => Hash::make('Reffah08032007')
         ]);
+        
+    }
+    
+    public static function Logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
+        return redirect('/login');
+    }
+
+    public static function ProfileEdit(Request $request)
+    {
+        $edit = true;
+        return back()->with([
+            'edit' => true
+        ]);
+    }
+
+    public static function Profile(Request $request)
+    {
+        $validatedRequest = $request->validate([
+            'username' => 'required',
+            'email' => 'required|email:dns',
+            'sekolah' => 'required'
+        ]);
+        $user = Auth::user();
+        $user->update($validatedRequest);
+        return back()->with([
+            'edit' => false
+        ]);
     }
 
     public static function AddTeam(Request $request)
@@ -102,14 +133,5 @@ class BackEndController extends Controller
         }
 
         return back();
-    }
-
-    public static function Logout(Request $request)
-    {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect('/login');
     }
 }

@@ -12,6 +12,11 @@ class FrontEndController extends Controller
         return view('main');
     }
 
+    public static function Profile()
+    {
+        return view('profile');
+    }
+
     public static function Register()
     {
         return view('register');

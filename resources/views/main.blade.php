@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="profile">Profil</a><br>
     <a href="lomba">Daftar lomba</a>
     <form method="POST" action="logout">
         @csrf
