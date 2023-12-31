@@ -73,11 +73,17 @@ class BackEndController extends Controller
         return back();
     }
 
+    public static function DeleteParticipant(Request $request)
+    {
+        Participant::where('id', $request->participant)->delete();
+        return back();
+    }
+
     public static function Team(Request $request)
     {
         $team = Team::all()->where('id', $request->team)->first();
         foreach ($team->participants as $participant) {
-            $participant->update(['name' => ($request[$participant->id]!="")? $request[$participant->id] : $participant->name]);
+            $participant->update(['name' => ($request[$participant->id]!="")? $request[$participant->id] : ""]);
         }
 
         return back();

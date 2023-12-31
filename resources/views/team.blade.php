@@ -11,10 +11,18 @@
         @csrf
         <input type="hidden" name="team" value="{{$team->id}}">
         @foreach ($team->participants as $participant)
-        <input type="text" name="{{$participant->id}}" placeholder="{{$participant->name}}"><br>
+        <input type="text" name="{{$participant->id}}" value="{{$participant->name}}" placeholder="Nama">
+        <br>
         @endforeach
         <button type="submit">save</button>
     </form>
+    @foreach ($team->participants as $participant)
+    <form method="POST" action="/deleteParticipant">
+        @csrf
+        <input type="hidden" name="participant" value="{{$participant->id}}">
+        <button type="submit">Delete {{$participant->id}}</button>
+    </form>
+    @endforeach
     <form method="POST" action="/addParticipant">
         @csrf
         <input type="hidden" name="team" value="{{$team->id}}">
