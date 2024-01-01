@@ -1,8 +1,29 @@
-var a, b, c;
+var a, b, c, d;
 
 window.onload = load;
 function load() {
     resize();
+}
+
+function smp() {
+    document.getElementById("one-one").style.filter = "brightness(100%)";
+    document.getElementById("one-two").style.filter = "brightness(60%)";
+    document.getElementById("one-three").style.filter = "brightness(60%)";
+    document.getElementById("one-four").style.filter = "brightness(60%)";
+    document.getElementById("two-one").style.filter = "brightness(60%)";
+    document.getElementById("two-two").style.filter = "brightness(60%)";
+    document.getElementById("two-three").style.filter = "brightness(60%)";
+    document.getElementById("two-four").style.filter = "brightness(60%)";
+    document.getElementById("three-one").style.filter = "brightness(60%)";
+    document.getElementById("three-two").style.filter = "brightness(60%)";
+    document.getElementById("three-three").style.filter = "brightness(60%)";
+    document.getElementById("three-four").style.filter = "brightness(60%)";
+    document.getElementById("three-five").style.filter = "brightness(60%)";
+    document.getElementById("four-two").style.filter = "brightness(60%)";
+    document.getElementById("four-three").style.filter = "brightness(60%)";
+    document.getElementById("four-four").style.filter = "brightness(60%)";
+    document.getElementById("four-five").style.filter = "brightness(60%)";
+    document.getElementById("four-six").style.filter = "brightness(60%)";
 }
 
 window.onresize = resize;
@@ -10,11 +31,25 @@ function resize() {
     var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
     if (width < 640) {
         a = 20;
+        b = 26;
+        c = 48;
+        d = 25;
     } else if (width < 768) {
         a = 15;
+        b = 23;
+        c = 42;
+        d = 23;
     } else if (width < 1024) {
         a = 13;
-    } else a = 11;
+        b = 20;
+        c = 38;
+        d = 20;
+    } else {
+        a = 11;
+        b = 17;
+        c = 33;
+        d = 20;
+    }
 }
 
 window.mobileCheck = function () {
@@ -54,49 +89,101 @@ function leaveSaintek() {
         "translateX(0) rotateZ(12deg) ";
 }
 
-function enterSac() {
+function enterJournal() {
     document.getElementById("two-one").style.transform =
-        "translateX(10vw) rotateZ(0deg) translateY(1vw)";
-    document.getElementById("two-two").style.transform = "translateY(1vw)";
+        "translateX(-" + (a / 2 + a).toString() + "vw) rotateZ(0deg)";
+    document.getElementById("two-two").style.transform =
+        "translateX(-" + (a / 2).toString() + "vw) rotateZ(0deg)";
     document.getElementById("two-three").style.transform =
-        "translateX(-10vw) rotateZ(0deg) translateY(1vw) rotateY(0)";
+        "translateX(" + (a / 2).toString() + "vw) rotateZ(0deg) rotateY(0)";
+    document.getElementById("two-four").style.transform =
+        "translateX(" + (a / 2 + a).toString() + "vw) rotateZ(0deg) rotateY(0)";
+}
+function leaveJournal() {
+    document.getElementById("two-one").style.transform =
+        "translateX(0) rotateZ(-12deg)";
+    document.getElementById("two-two").style.transform =
+        "translateX(0) rotateZ(-4deg) ";
+    document.getElementById("two-three").style.transform =
+        "translateX(0) rotateZ(4deg) ";
+    document.getElementById("two-four").style.transform =
+        "translateX(0) rotateZ(12deg) ";
+}
+
+function enterSac() {
+    document.getElementById("three-one").style.transform =
+        "translateX(-" + a.toString() + "vw) rotateZ(0deg)";
+    document.getElementById("three-two").style.transform =
+        "translateX(-" +
+        (a / 2).toString() +
+        "vw) translateY(" +
+        b.toString() +
+        "vw) rotateZ(0deg)";
+    document.getElementById("three-three").style.transform =
+        "translateX(0) rotateZ(0deg) rotateY(0)";
+    document.getElementById("three-four").style.transform =
+        "translateX(" +
+        (a / 2).toString() +
+        "vw) translateY(" +
+        b.toString() +
+        "vw) rotateZ(0deg)";
+    document.getElementById("three-five").style.transform =
+        "translateX(" + a.toString() + "vw) rotateZ(0deg) rotateY(0)";
+    document.getElementById("sacBorder").style.paddingTop = c.toString() + "vw";
 }
 function leaveSac() {
-    document.getElementById("two-one").style.transform =
-        "translateX(0) rotateZ(12deg) translateY(0)";
-    document.getElementById("two-two").style.transform = "translateY(0)";
-    document.getElementById("two-three").style.transform =
-        "translateX(0) rotateZ(-12deg) translateY(0)";
+    document.getElementById("three-one").style.transform =
+        "translateX(0) rotateZ(-16deg)";
+    document.getElementById("three-two").style.transform =
+        "translateX(0) translateY(0) rotateZ(-8deg) ";
+    document.getElementById("three-three").style.transform =
+        "translateX(0) rotateZ(0deg) ";
+    document.getElementById("three-four").style.transform =
+        "translateX(0) translateY(0) rotateZ(8deg) ";
+    document.getElementById("three-five").style.transform =
+        "translateX(0) rotateZ(16deg) ";
+    document.getElementById("sacBorder").style.paddingTop = d.toString() + "vw";
 }
 
 function enterLang() {
-    document.getElementById("three-one").style.transform =
-        "translateX(10vw) rotateZ(0deg) translateY(1vw)";
-    document.getElementById("three-two").style.transform = "translateY(1vw)";
-    document.getElementById("three-three").style.transform =
-        "translateX(-10vw) rotateZ(0deg) translateY(1vw) rotateY(0)";
+    document.getElementById("four-one").style.transform =
+        "translateX(-" + a.toString() + "vw) rotateZ(0deg)";
+    document.getElementById("four-two").style.transform =
+        "translateX(-" +
+        a.toString() +
+        "vw) translateY(" +
+        b.toString() +
+        "vw) rotateZ(0deg)";
+    document.getElementById("four-three").style.transform =
+        "translateX(0) rotateZ(0deg) rotateY(0)";
+    document.getElementById("four-four").style.transform =
+        "translateX(0vw) translateY(" + b.toString() + "vw) rotateZ(0deg)";
+    document.getElementById("four-five").style.transform =
+        "translateX(" + a.toString() + "vw) rotateZ(0deg) rotateY(0)";
+    document.getElementById("four-six").style.transform =
+        "translateX(" +
+        a.toString() +
+        "vw) translateY(" +
+        b.toString() +
+        "vw) rotateZ(0deg)";
+    document.getElementById("langBorder").style.paddingTop =
+        c.toString() + "vw";
 }
 function leaveLang() {
-    document.getElementById("three-one").style.transform =
-        "translateX(0) rotateZ(12deg) translateY(0)";
-    document.getElementById("three-two").style.transform = "translateY(0)";
-    document.getElementById("three-three").style.transform =
-        "translateX(0) rotateZ(-12deg) translateY(0)";
-}
-
-function enterJournal() {
     document.getElementById("four-one").style.transform =
-        "translateX(10vw) rotateZ(0deg) translateY(1vw)";
-    document.getElementById("four-two").style.transform = "translateY(1vw)";
+        "translateX(0) rotateZ(-20deg)";
+    document.getElementById("four-two").style.transform =
+        "translateX(0) translateY(0) rotateZ(-12deg) ";
     document.getElementById("four-three").style.transform =
-        "translateX(-10vw) rotateZ(0deg) translateY(1vw) rotateY(0)";
-}
-function leaveJournal() {
-    document.getElementById("four-one").style.transform =
-        "translateX(0) rotateZ(12deg) translateY(0)";
-    document.getElementById("four-two").style.transform = "translateY(0)";
-    document.getElementById("four-three").style.transform =
-        "translateX(0) rotateZ(-12deg) translateY(0)";
+        "translateX(0) rotateZ(-4deg) ";
+    document.getElementById("four-four").style.transform =
+        "translateX(0) translateY(0) rotateZ(4deg) ";
+    document.getElementById("four-five").style.transform =
+        "translateX(0) rotateZ(12deg) ";
+    document.getElementById("four-six").style.transform =
+        "translateX(0) translateY(0) rotateZ(20deg) ";
+    document.getElementById("langBorder").style.paddingTop =
+        d.toString() + "vw";
 }
 (function () {
     const second = 1000,

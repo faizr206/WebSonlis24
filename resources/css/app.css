@@ -17,7 +17,7 @@
     }
 
     .cntnum{
-        @apply text-[8vw] md:text-[9vw] pb-[3vw]
+        @apply text-[8vw] md:text-[9vw] pb-0 md:pb-[3vw]
     }
 
     .sacbtn{
@@ -26,5 +26,9 @@
 
     .lombacard{
         @apply w-[16%] sm:w-[14%] md:w-[12%] lg:w-[11%] xl:w-[10%]
+    }
+
+    .milih{
+        @apply border-white border-b-4 hover:border-slate-500 transition-all duration-300 ease-in-out
     }
 }

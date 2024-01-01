@@ -67,7 +67,6 @@
 .one-one{
     transform: rotateZ(-12deg);
     transition: 0.3s ease-in-out;
-    transform-style: preserve-3d;
 }
 
 .one-two{
@@ -84,56 +83,82 @@
     transition: 0.3s ease-in-out;
 }
 
-
 .two-one{
-    transform: rotateZ(12deg);
+    transform: rotateZ(-12deg);
     transition: 0.3s ease-in-out;
-    transform-style: preserve-3d;
 }
 
 .two-two{
-    transform: rotateZ(0deg);
+    transform: rotateZ(-4deg);
     transition: 0.3s ease-in-out;
 }
 
 .two-three{
-    transform: rotateZ(-12deg);
+    transform: rotateZ(4deg);
+    transition: 0.3s ease-in-out;
+}
+.two-four{
+    transform: rotateZ(12deg);
     transition: 0.3s ease-in-out;
 }
 
 
 .three-one{
-    transform: rotateZ(12deg);
+    transform: rotateZ(-16deg);
     transition: 0.3s ease-in-out;
-    transform-style: preserve-3d;
 }
 
 .three-two{
-    transform: rotateZ(0deg);
+    transform: rotateZ(-8deg);
     transition: 0.3s ease-in-out;
 }
 
 .three-three{
-    transform: rotateZ(-12deg);
-    transition: 0.3s ease-in-out;
-}
-
-
-.four-one{
-    transform: rotateZ(12deg);
-    transition: 0.3s ease-in-out;
-    transform-style: preserve-3d;
-}
-
-.four-two{
     transform: rotateZ(0deg);
     transition: 0.3s ease-in-out;
 }
+.three-four{
+    transform: rotateZ(8deg);
+    transition: 0.3s ease-in-out;
+}
+.three-five{
+    transform: rotateZ(16deg);
+    transition: 0.3s ease-in-out;
+}
 
-.four-three{
+.sacBorder{
+    transition: 0.3s ease-in-out;
+}
+.langBorder{
+    transition: 0.3s ease-in-out;
+}
+
+.four-one{
+    transform: rotateZ(-20deg);
+    transition: 0.3s ease-in-out;
+}
+
+.four-two{
     transform: rotateZ(-12deg);
     transition: 0.3s ease-in-out;
 }
+.four-three{
+    transform: rotateZ(-4deg);
+    transition: 0.3s ease-in-out;
+}
+.four-four{
+    transform: rotateZ(4deg);
+    transition: 0.3s ease-in-out;
+}
+.four-five{
+    transform: rotateZ(12deg);
+    transition: 0.3s ease-in-out;
+}
+.four-six{
+    transform: rotateZ(20deg);
+    transition: 0.3s ease-in-out;
+}
+
 
 .rundown{
   background-image: linear-gradient(rgba(255, 255, 255, 0.3) .1em, transparent .1em), linear-gradient(90deg, rgba(255, 255, 255, 0.3) .1em, transparent .1em);
