@@ -1,0 +1,106 @@
+@keyframes rescale {
+    0% {
+        transform : scale(0);
+    }
+    100% {
+        transform : scale(5);
+  }
+}
+
+.animate-rescale {
+  animation: rescale 2s ease-in-out;
+  animation-delay: 5s;
+
+}
+
+@keyframes terjun {
+    0% {
+        transform : translateY(0px);
+    }
+    100% {
+      transform : translateY(360px);
+    }
+}
+.animate-terjun {
+    animation : terjun 2s ease-in-out;
+    animation-fill-mode : forwards;
+    animation-delay: 3.1s;
+}
+
+@keyframes muncul {
+    100% {
+        opacity : 1;
+    }
+}
+.animate-muncul-1 {
+   animation : muncul 1s ease-in;
+   animation-fill-mode : forwards;
+   animation-delay: 3s;
+}
+
+.animate-muncul-2 {
+    animation : muncul 0.5s ease-in-out;
+    animation-fill-mode : forwards;
+    animation-delay: 4.35s;
+}
+
+.animate-muncul-3 {
+    animation : muncul 0.5s ease-in-out;
+    animation-fill-mode : forwards;
+    animation-delay: 4.3s;
+}
+
+.animate-muncul-4 {
+    animation : muncul 0.5s ease-in-out;
+    animation-fill-mode : forwards;
+    animation-delay: 4.5s;
+}
+
+@keyframes naik {
+    50% {
+        transform : translateY(-320px);
+    }
+    100% {
+       transform : translateY(-320px) rotate(-40deg); 
+    }
+}
+.animate-naik {
+    animation : naik 3s ease-in-out;
+    animation-fill-mode : forwards;
+}
+
+@keyframes tuang {
+    0% {
+        transform : rotate(0);
+    }
+    100% {
+        transform : rotate(-45deg);
+    }
+}
+.animate-tuang {
+    animation : tuang 1s ease-in-out delay-2000ms;
+}
+
+@keyframes light {
+    100% {
+        background-color : white;
+    }
+}
+
+.animate-light {
+    animation : light 2s ease-in-out;
+    animation-fill-mode:forwards;
+    animation-delay : 6s;
+}
+
+@keyframes transparan {
+    100% {
+        opacity : 0;
+    }
+}
+
+.animate-transparan {
+    animation : transparan 2s ease-in-out;
+    animation-fill-mode : forwards;
+    animation-delay : 6s;
+}

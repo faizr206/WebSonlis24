@@ -5,23 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    @vite('resources/css/app.css')
-    <link rel="stylesheet" href="{{ url('/css/welcome.css') }}">
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="{{ url('css/frontpage.css') }}" media="screen" />
+    <link rel = "stylesheet" type = "text/css" href = "{{ url('/css/animation.css') }}" media="screen">
 </head>
 
-<body class="overflow-hidden">
-    <div class="flex justify-center">
-        <div class="bg-slate-100 rounded-2xl w-1/6 aspect-square overflow-show relative m-52 justify-center">
-            <img src="{{ url('/img/logoUtama.png') }}" alt="">
-            <svg viewBox="0 0 200 200" width="200%" class="filler absolute -left-1/2">
-                <path fill="#FFFFFF"
-                    d="M46,-68C59.1,-63.2,68.9,-49.6,71.7,-35.2C74.5,-20.8,70.4,-5.6,67.2,9C64.1,23.6,61.8,37.6,54.9,50.1C48,62.6,36.4,73.6,22.4,79C8.3,84.5,-8.2,84.4,-22.2,78.8C-36.3,73.3,-47.8,62.3,-58.8,50.5C-69.8,38.6,-80.3,25.8,-81.3,12.3C-82.3,-1.2,-73.9,-15.6,-65.6,-28.5C-57.4,-41.5,-49.5,-53.1,-38.6,-58.9C-27.7,-64.6,-13.9,-64.6,1.3,-66.6C16.5,-68.6,32.9,-72.8,46,-68Z"
-                    transform="translate(100 100)" />
-
-            </svg>
-        </div>
+<body style="overflow: hidden">
+    <div class = "tap z-50 text-center text-[22px] font-bold animate-pulse text-white">
+        Tap
+        anywhere to
+        enter</div>
+    <div class='the_animation w-screen bg-[#0C1E1E] flex h-screen animate-light'>
+        <section class = 'animate-transparan flex h-screen w-screen'>
+            <div class = 'm-auto w-[500px] h-[470px] pt-[42px] self-end relative flex'>
+                <div class = 'left-1/2 -translate-x-[196px] relative flex'>
+                    <div style = 'background-image:url({{ url('img/frontpage/2.svg') }});'
+                        class = 'absolute m-auto w-96 h-96 animate-rescale scale-[0] bg-contain bg-bottom bg-no-repeat'>
+                    </div>
+                </div>
+                <div style = 'background-image:url({{ url('img/frontpage/3.svg') }});'
+                    class = 'w-40 h-40 -bottom-24 -right-5 animate-naik absolute bg-contain bg-no-repeat z-50'></div>
+                <div style = 'background-image:url({{ url('img/frontpage/4.svg') }});'
+                    class = 'animate-muncul-1 opacity-0 w-8 h-8 bg-contain right-[140px] top-[156px] bg-no-repeat z-10 absolute'>
+                    <div
+                        class = 'w-[10px] h-[300px] rounded-xl  translate-x-[6.2px] overflow-hidden translate-y-[23px]'>
+                        <div class = 'w-20 h-96 -top-96 bg-[#80BBE6] absolute z-40 animate-terjun'></div>
+                    </div>
+                </div>
+                <div class = 'water_drop  z-50'>
+                    <div
+                        class = 'w-12 h-12 bg-[#80BBE6] opacity-0 animate-muncul-2 absolute -bottom-5 right-[152px] z-50 blur-sm rounded-full '>
+                    </div>
+                    <div
+                        class = 'w-12 h-12 bg-[#80BBE6] opacity-0 animate-muncul-3 absolute -bottom-5 right-[128px] z-50 blur-sm rounded-full '>
+                    </div>
+                    <div
+                        class = 'w-12 h-12 bg-[#80BBE6] opacity-0 animate-muncul-4 absolute -bottom-2 right-[136px] z-50 blur-sm rounded-full '>
+                    </div>
+                </div>
+                <div style = 'background-image:url({{ url('img/frontpage/1.svg') }});'
+                    class = 'my-auto z-0 mx-auto w-[200px] h-[450px] mb-2 bg-contain bg-bottom bg-no-repeat'></div>
+            </div>
+        </section>
     </div>
+
+
+
+
+    <script>
+        var APP_URL = {!! json_encode(url('/')) !!}
+        window.onload = setTimeout(function() {
+            window.location = APP_URL + "/home";
+        }, 7500); //delay is in milliseconds 
+
+        document.body.addEventListener('click', function() {
+            window.location = APP_URL + "/home";
+        }, true);
+    </script>
 </body>
 
 </html>
