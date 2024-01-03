@@ -24,6 +24,7 @@ Route::get('/forgotPassword', [FrontEndController::class, 'ForgotPassword'])->mi
 Route::get('/resetPassword', [FrontEndController::class, 'ResetPassword'])->name('password.reset')->middleware('guest');
 Route::get('/lomba', [FrontEndController::class, 'Lomba'])->middleware('auth');
 Route::get('/lomba/{team}', [FrontEndController::class, 'Team'])->middleware('auth');
+Route::get('/admin', [FrontendController::class, 'Admin'])->middleware('auth')->middleware('admin');
 
 Route::post('/register', [BackEndController::class, 'Register']);
 Route::post('/login', [BackEndController::class, 'Login']);

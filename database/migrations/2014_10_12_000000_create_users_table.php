@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('sekolah');
             $table->string('jenjang');
+            $table->boolean('admin')->default(false);
             $table->timestamp('email_verified_at')->nullable();     
             $table->rememberToken();
             $table->timestamps();

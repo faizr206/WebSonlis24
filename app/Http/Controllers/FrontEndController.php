@@ -51,4 +51,9 @@ class FrontEndController extends Controller
             'team' => \Illuminate\Support\Facades\Auth::user()->teams->where('id', $team)->first(),
         ]);
     }
+
+    public static function Admin()
+    {
+        return view('admin');
+    }
 }
