@@ -53,7 +53,8 @@
     transform-style: preserve-3d;
 }
 .card:hover .content{
-    transform: rotateY(180deg);
+    /* transform: rotateY(180deg); */
+    transform: rotateY(var(--angle));
 }
 .back{
     transform: rotateY(180deg);
@@ -134,28 +135,32 @@
 }
 
 .four-one{
-    transform: rotateZ(-20deg);
+    transform: rotateZ(-24deg);
     transition: 0.3s ease-in-out;
 }
 
 .four-two{
-    transform: rotateZ(-12deg);
+    transform: rotateZ(-16deg);
     transition: 0.3s ease-in-out;
 }
 .four-three{
-    transform: rotateZ(-4deg);
+    transform: rotateZ(-8deg);
     transition: 0.3s ease-in-out;
 }
 .four-four{
-    transform: rotateZ(4deg);
+    transform: rotateZ(0deg);
     transition: 0.3s ease-in-out;
 }
 .four-five{
-    transform: rotateZ(12deg);
+    transform: rotateZ(8deg);
     transition: 0.3s ease-in-out;
 }
 .four-six{
-    transform: rotateZ(20deg);
+    transform: rotateZ(16deg);
+    transition: 0.3s ease-in-out;
+}
+.four-seven{
+    transform: rotateZ(24deg);
     transition: 0.3s ease-in-out;
 }
 
