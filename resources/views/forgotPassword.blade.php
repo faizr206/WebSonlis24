@@ -7,12 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST">
+    <form method="POST" action="/forgotPassword">
         @csrf
-        <input type="text" name="email" placeholder="Email..." required><br>
-        <input type="password" name="password" placeholder="Pasword..." required><br>
-        <button type="submit">Login</button>
+        <input type="email" name="email" placeholder="email">
+        <button type="submit">Send reset link</button>
     </form>
-    <a href="forgotPassword">Forgot Password?</a>
 </body>
 </html>

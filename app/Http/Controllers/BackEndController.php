@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
 
 use App\Models\User;
 use App\Models\Competition;
@@ -43,7 +44,7 @@ class BackEndController extends Controller
         {
             $request->session()->regenerate();
 
-            return redirect()->intended('/home');
+            return redirect()->intended('/');
         }
     }
     
@@ -76,6 +77,37 @@ class BackEndController extends Controller
         return back()->with([
             'edit' => false
         ]);
+    }
+
+    public static function ForgotPassword(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email:dns'
+        ]);
+
+        Password::sendResetLink($request->only('email'));
+
+        return redirect('login');
+    }
+
+    public static function ResetPassword(Request $request)
+    {
+        $request->validate([
+            'token' => 'required',
+            'email' => 'required|email:dns',
+            'password' => 'required|confirmed'
+        ]);
+
+        Password::Reset($request->only('email', 'password', 'password_confirmation', 'token'), function (User $user, string $password)
+        {
+            $user->ForceFill([
+                'password' => Hash::make($password)
+            ]);
+
+            $user->save();
+        });
+
+        return redirect('login');
     }
 
     public static function AddTeam(Request $request)

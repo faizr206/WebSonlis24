@@ -27,6 +27,16 @@ class FrontEndController extends Controller
         return view('login');
     }
 
+    public static function ForgotPassword()
+    {
+        return view('forgotPassword');
+    }
+
+    public static function ResetPassword()
+    {
+        return view('resetPassword');
+    }
+
     public static function Lomba()
     {
         return view('lomba', [
