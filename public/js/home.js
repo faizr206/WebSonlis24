@@ -1,4 +1,4 @@
-var a, b, c, d, ds, ismobile;
+var a, b, c, d, ds, ismobile, under, under2;
 
 window.mobileAndTabletCheck = function () {
     let check = false;
@@ -26,12 +26,19 @@ function load() {
 }
 
 const adasmp = ["one-one", "one-two", "one-three", "one-four", "three-five"];
-const adasma = ["four-two", "four-five", "two-one", "three-one", "three-three"];
+const adasma = [
+    "four-six",
+    "four-five",
+    "two-one",
+    "three-one",
+    "three-three",
+    "four-seven",
+];
 const adasmpsma = [
     "four-one",
     "four-four",
     "four-three",
-    "four-six",
+    "four-two",
     "two-four",
     "two-two",
     "three-two",
@@ -58,6 +65,7 @@ const adaall = [
     "four-four",
     "four-five",
     "four-six",
+    "four-seven",
 ];
 
 function enable(str) {
@@ -93,21 +101,21 @@ function cekumum(value) {
 
 function smp() {
     adaall.forEach(ceksmp);
-    document.getElementById("psmp").style.borderColor = "#6b7280";
+    document.getElementById("psmp").style.borderColor = "#2a4b9b";
     document.getElementById("psma").style.borderColor = "white";
     document.getElementById("pumum").style.borderColor = "white";
 }
 function sma() {
     adaall.forEach(ceksma);
     document.getElementById("psmp").style.borderColor = "white";
-    document.getElementById("psma").style.borderColor = "#6b7280";
+    document.getElementById("psma").style.borderColor = "#2a4b9b";
     document.getElementById("pumum").style.borderColor = "white";
 }
 function umum() {
     adaall.forEach(cekumum);
     document.getElementById("psmp").style.borderColor = "white";
     document.getElementById("psma").style.borderColor = "white";
-    document.getElementById("pumum").style.borderColor = "#6b7280";
+    document.getElementById("pumum").style.borderColor = "#2a4b9b";
 }
 
 window.onresize = resize;
@@ -118,21 +126,29 @@ function resize() {
         b = 26;
         c = 48;
         d = 25;
+        under = true;
+        under2 = true;
     } else if (width < 768) {
         a = 15;
         b = 23;
         c = 42;
         d = 23;
+        under = false;
+        under2 = true;
     } else if (width < 1024) {
         a = 13;
         b = 20;
         c = 38;
         d = 20;
+        under = false;
+        under2 = true;
     } else {
         a = 11;
         b = 17;
         c = 33;
         d = 20;
+        under = false;
+        under2 = false;
     }
 }
 
@@ -179,7 +195,7 @@ function leaveJournal() {
 }
 
 function enterSac() {
-    if (ismobile) enterSacMobile();
+    if (ismobile || under) enterSacMobile();
     else enterSacDesktop();
 }
 function enterSacMobile() {
@@ -230,7 +246,7 @@ function leaveSac() {
 }
 
 function enterLang() {
-    if (ismobile) enterLangMobile();
+    if (ismobile || under2) enterLangMobile();
     else enterLangDesktop();
 }
 function enterLangMobile() {
