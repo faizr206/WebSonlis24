@@ -12,7 +12,7 @@
 
 <body class="font-[montserrat] bg-[#edf1be] overflow-x-hidden">
     <div class="flex justify-center items-center w-full h-[70vw] bg-cover"
-        style="background-image: url({{ url('img/background.png') }})">
+        style="background-image: url({{ url('img/welcomePage.png') }})">
         <img src="{{ url('/img/headline.png') }}" class="res w-3/5 -translate-y-1/4" alt="">
     </div>
     <div class="relative">
@@ -45,23 +45,23 @@
         <div class="pt-[2vw] bg-[#def2fd]">
             <h1 class=" text-center text-[6vw] font-sunday text-[#3b73b9] strokeme res">COMPETITION
             </h1>
-            <div class="relative">
+            <div class="relative hidden">
                 <img src="{{ url('img/blade1.svg') }}" class="absolute z-30 w-[10vw] drop-shadow-2xl blade1"
                     alt="">
                 <img src="{{ url('img/blade1.svg') }}" class="absolute z-30 w-[10vw] drop-shadow-2xl blade2"
                     alt="">
             </div>
             <div
-                class="flex flex-row justify-center items-center gap-x-10 font-montserrat font-bold text-2xl md:text-3xl text-[#3b73b9] pt-5 pb-3">
+                class="flex flex-row justify-center items-center gap-x-7 md:gap-x-10 font-montserrat font-bold pt-5 pb-3">
                 <button class="milih" id="psmp" href="#" onclick="smp()">SMP</button>
                 <button class="milih" id="psma" href="#" onclick="sma()">SMA</button>
                 <button class="milih" id="pumum" href="#" onclick="umum()">UMUM</button>
             </div>
-            <div id="lombaSMP">
+            <div>
                 <div class="bg-[#c4dcae]  flex flex-col justify-center items-center" onmouseenter="enterSaintek()"
                     onmouseleave="leaveSaintek()">
                     <img src="{{ url('/img/jenis/saintek.png') }}" alt=""
-                        class=" w-5/12 md:w-1/3 lg:w-1/4 mt-5 mb-6 lg:mb-8">
+                        class="res w-5/12 md:w-1/3 lg:w-1/4 mt-5 mb-6 lg:mb-8">
                     <div class="relative w-full">
                         <div id="one-one"
                             class=" absolute lombacard drop-shadow-xl left-[40vw] sm:left-[41vw] md:left-[42vw] lg:left-[43vw] one-one card">
@@ -69,11 +69,11 @@
                                 <div class="front"><img src="{{ url('/img/lomba/scicomp.png') }}" class="w-full"
                                         alt=""></div>
                                 <div
-                                    class="back bg-[#a5ce45] rounded-lg border-[#378a41] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
+                                    class="back rounded-lg saintek flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/saintekBorder.svg') }}" class="w-[90%] -z-30 absolute"
                                         alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    <a href="#" class="lombabtn saintekbtn">Daftar</a>
+                                    <a href="#" class="lombabtn saintekbtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -84,11 +84,11 @@
                                         alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
+                                    class="back rounded-lg saintek flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/saintekBorder.svg') }}" class="w-[90%] -z-30 absolute"
                                         alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    <a href="#" class="lombabtn saintekbtn">Daftar</a>
+                                    <a href="#" class="lombabtn saintekbtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -99,11 +99,11 @@
                                     <img src="{{ url('/img/lomba/mathcomp.png') }}" class="w-full" alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    class="back saintek rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/saintekBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
+                                    <a href="#" class="lombabtn saintekbtn">Daftar</a>
+                                    <a href="#" class="lombabtn saintekbtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -114,11 +114,11 @@
                                     <img src="{{ url('/img/lomba/saq.png') }}" class="w-full" alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    class="back saintek rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/saintekBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
+                                    <a href="#" class="lombabtn saintekbtn">Daftar</a>
+                                    <a href="#" class="lombabtn saintekbtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +129,7 @@
                 <div class="bg-[#f6e1e9] flex flex-col justify-center items-center" onmouseenter="enterJournal()"
                     onmouseleave="leaveJournal()">
                     <img src="{{ url('/img/jenis/journal.png') }}" alt=""
-                        class=" w-5/12 md:w-1/3 lg:w-1/4 mt-5 mb-6 lg:mb-8">
+                        class="res w-5/12 md:w-1/3 lg:w-1/4 mt-5 mb-6 lg:mb-8">
                     <div class="relative w-full">
                         <div id="two-one"
                             class="absolute lombacard drop-shadow-xl left-[40vw] sm:left-[41vw] md:left-[42vw] lg:left-[43vw] two-one card">
@@ -137,11 +137,11 @@
                                 <div class="front"><img src="{{ url('/img/lomba/shortmov.png') }}" class="w-full"
                                         alt=""></div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    class="back journal rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/journalBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
+                                    <a href="#" class="lombabtn journalbtn">Daftar</a>
+                                    <a href="#" class="lombabtn journalbtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -152,11 +152,11 @@
                                         alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    class="back journal rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/journalBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
+                                    <a href="#" class="lombabtn journalbtn">Daftar</a>
+                                    <a href="#" class="lombabtn journalbtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -167,11 +167,11 @@
                                     <img src="{{ url('/img/lomba/photo.png') }}" class="w-full" alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    class="back journal rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/journalBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
+                                    <a href="#" class="lombabtn journalbtn">Daftar</a>
+                                    <a href="#" class="lombabtn journalbtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -182,11 +182,11 @@
                                     <img src="{{ url('/img/lomba/essay.png') }}" class="w-full" alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    class="back journal rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/journalBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
+                                    <a href="#" class="lombabtn journalbtn">Daftar</a>
+                                    <a href="#" class="lombabtn journalbtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -197,7 +197,7 @@
                 <div class="bg-[#f8e8a0] flex flex-col justify-center items-center" onmouseenter="enterSac()"
                     onmouseleave="leaveSac()">
                     <img src="{{ url('/img/jenis/sac.png') }}" alt=""
-                        class=" w-5/12 md:w-1/3 lg:w-1/4 mt-5 mb-6 lg:mb-8">
+                        class="res w-5/12 md:w-1/3 lg:w-1/4 mt-5 mb-6 lg:mb-8">
                     <div class="relative w-full">
                         <div id="three-one"
                             class="absolute lombacard drop-shadow-xl left-[39vw] sm:left-[40vw] md:left-[41vw] lg:left-[42vw] three-one card">
@@ -205,11 +205,11 @@
                                 <div class="front"><img src="{{ url('/img/lomba/muscov.png') }}" class="w-full"
                                         alt=""></div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    class="back sac rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
                                     <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
                                         alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    <a href="#" class="lombabtn sacbtn">Daftar</a>
+                                    <a href="#" class="lombabtn sacbtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -220,11 +220,11 @@
                                         alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    class="back sac rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
                                     <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
                                         alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    <a href="#" class="lombabtn sacbtn">Daftar</a>
+                                    <a href="#" class="lombabtn sacbtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -235,11 +235,11 @@
                                     <img src="{{ url('/img/lomba/soccer.png') }}" class="w-full" alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    class="back sac rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
                                     <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
                                         alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    <a href="#" class="lombabtn sacbtn">Daftar</a>
+                                    <a href="#" class="lombabtn sacbtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -250,11 +250,11 @@
                                     <img src="{{ url('/img/lomba/ratohjaroe.png') }}" class="w-full" alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    class="back sac rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
                                     <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
                                         alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    <a href="#" class="lombabtn sacbtn">Daftar</a>
+                                    <a href="#" class="lombabtn sacbtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -265,11 +265,11 @@
                                     <img src="{{ url('/img/lomba/pramuka.png') }}" class="w-full" alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    class="back sac rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
                                     <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
                                         alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    <a href="#" class="lombabtn sacbtn">Daftar</a>
+                                    <a href="#" class="lombabtn sacbtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -280,7 +280,7 @@
                 <div class="bg-[#cde7f8] flex flex-col justify-center items-center" onmouseenter="enterLang()"
                     onmouseleave="leaveLang()">
                     <img src="{{ url('/img/jenis/language.png') }}" alt=""
-                        class=" w-5/12 md:w-1/3 lg:w-1/4 mt-5 mb-6 lg:mb-8">
+                        class="res w-5/12 md:w-1/3 lg:w-1/4 mt-5 mb-6 lg:mb-8">
                     <div class="relative w-full">
                         <div id="four-one"
                             class="absolute lombacard drop-shadow-xl left-[39vw] sm:left-[40vw] md:left-[41vw] lg:left-[42vw] four-one card">
@@ -288,26 +288,26 @@
                                 <div class="front"><img src="{{ url('/img/lomba/speech.png') }}" class="w-full"
                                         alt=""></div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    class="back language rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/languageBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
+                                    <a href="#" class="lombabtn languagebtn">Daftar</a>
+                                    <a href="#" class="lombabtn languagebtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
                         <div id="four-two"
                             class="absolute lombacard drop-shadow-xl left-[40vw] sm:left-[41vw] md:left-[42vw] lg:left-[43vw] four-two card">
                             <div class="content">
-                                <div class="front"><img src="{{ url('/img/lomba/debat.png') }}" class="w-full"
+                                <div class="front"><img src="{{ url('/img/lomba/stortel.png') }}" class="w-full"
                                         alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    class="back language rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/languageBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
+                                    <a href="#" class="lombabtn languagebtn">Daftar</a>
+                                    <a href="#" class="lombabtn languagebtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -318,11 +318,11 @@
                                     <img src="{{ url('/img/lomba/monolog.png') }}" class="w-full" alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    class="back language rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/languageBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
+                                    <a href="#" class="lombabtn languagebtn">Daftar</a>
+                                    <a href="#" class="lombabtn languagebtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -333,11 +333,11 @@
                                     <img src="{{ url('/img/lomba/khitobah.png') }}" class="w-full" alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    class="back language rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/languageBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
+                                    <a href="#" class="lombabtn languagebtn">Daftar</a>
+                                    <a href="#" class="lombabtn languagebtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -348,11 +348,11 @@
                                     <img src="{{ url('/img/lomba/puisi.png') }}" class="w-full" alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    class="back language rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/languageBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
+                                    <a href="#" class="lombabtn languagebtn">Daftar</a>
+                                    <a href="#" class="lombabtn languagebtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -360,14 +360,14 @@
                             class="absolute lombacard drop-shadow-xl left-[44vw] sm:left-[45vw] md:left-[46vw] lg:left-[47vw] z-50 -rotate-12 four-six card">
                             <div class="content">
                                 <div class="front">
-                                    <img src="{{ url('/img/lomba/stortel.png') }}" class="w-full" alt="">
+                                    <img src="{{ url('/img/lomba/ldbi.png') }}" class="w-full" alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    class="back language rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/languageBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
+                                    <a href="#" class="lombabtn languagebtn">Daftar</a>
+                                    <a href="#" class="lombabtn languagebtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -375,14 +375,14 @@
                             class="absolute lombacard drop-shadow-xl left-[44vw] sm:left-[45vw] md:left-[46vw] lg:left-[47vw] z-50 -rotate-12 four-seven card">
                             <div class="content">
                                 <div class="front">
-                                    <img src="{{ url('/img/lomba/debat.png') }}" class="w-full" alt="">
+                                    <img src="{{ url('/img/lomba/nsdc.png') }}" class="w-full" alt="">
                                 </div>
                                 <div
-                                    class="back bg-[#f9db7b] rounded-lg border-[#826541] flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/sacBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
-                                    <a href="#" class="sacbtn">Daftar</a>
-                                    <a href="#" class="sacbtn">Juknis</a>
+                                    class="back language rounded-lg flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
+                                    <img src="{{ url('/img/jenis/languageBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
+                                    <a href="#" class="lombabtn languagebtn">Daftar</a>
+                                    <a href="#" class="lombabtn languagebtn">Juknis</a>
                                 </div>
                             </div>
                         </div>
@@ -392,7 +392,8 @@
             </div>
         </div>
         <div class="bg-[#c6df91] flex flex-col justify-center items-center rundown">
-            <img src="{{ url('img/rundownHeadline.svg') }}" class="res w-[40vw] p-[4vw]" alt="">
+            <img src="{{ url('img/rundownHeadline.svg') }}" class="res coba w-[40vw] p-[2vw] m-[2vw]"
+                alt="">
             <img src="{{ url('img/rundownTemp.svg') }}" class="w-[80vw] sm:w-[60vw] md:w-[40vw] pb-[10vw]"
                 alt="">
         </div>
