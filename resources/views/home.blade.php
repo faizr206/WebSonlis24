@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -7,12 +7,54 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home Page</title>
     @vite('resources/css/app.css')
+
     <link rel="stylesheet" href="{{ url('/css/home.css') }}">
+    <script src="https://kit.fontawesome.com/e2e4af9857.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="font-[montserrat] bg-[#edf1be] overflow-x-hidden">
+
+    {{-- @yield('navbar') --}}
+    <nav class="h-15 flex justify-center items-center lg:pt-10 w-full sticky top-0 lg:fixed drop-shadow-sm" style="z-index: 100708">
+        <div class="nav-cont bg-white w-full h-full lg:w-1/2 lg:rounded-full lg:h-12 px-5">
+            <ul class=" lg:flex lg:justify-between h-full py-3 px-4 lg:px-10 font-bold">
+                <li class="nav-logo sm:max-md:order-first flex justify-between items-center">
+                    <div class="nav-sm-left">
+                        <a href="#home" class="flex justify-start items-center gap-2">
+                            <span class="hidden lg:flex">
+                                <span class="h-[85px] w-[85px] hover:h-[95px] hover:w-[95px] transition-all duration-300 bg-white rounded-full drop-shadow-lg grid place-content-center items-center">
+                                    <img src="{{ url('/img/logoUtama.png') }}" alt="SL24" class="w-[70px] hover:w-[65px] transition-all" >
+                                </span></span>
+                            <span class="lg:hidden"><img src="{{ url('/img/logoUtama.png') }}" alt="SL24" class="h-14"></span>
+                            <span class="lg:hidden">
+                                <h1 class="font-bold font-sans text-xl">Sonic Linguistic</h1>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="nav-sm-right lg:hidden flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+                        </svg>
+                    </div>
+                </li>
+                <div
+                    class="nav-left hidden lg:flex flex lg:flex-row flex-col lg:items-center lg:order-first gap-4 lg:gap-10 my-3 ms-1 me-1">
+                    <li><a href=#home class="lg:hover:line-through lg:decoration-4 transition-all decoration-[#ecb573]">HOME</a></li>
+                    <li><a href="#competition" class="lg:hover:line-through lg:decoration-4 transition-all decoration-[#acc8e8]">COMPETITIONS</a></li>
+                </div>
+                <div
+                    class="nav-right hidden lg:flex flex lg:flex-row flex-col lg:items-center lg:order-last gap-4 lg:gap-10 my-3 ms-1 me-4">
+                    <li><a href="" class="underline underline-offset-4 decoration-wavy decoration-2 lg:no-underline lg:hover:line-through lg:decoration-solid lg:decoration-4 decoration-[#df8583]">REGISTER</a></li>
+                    <li><a href="" class="underline underline-offset-4 decoration-wavy decoration-2 lg:no-underline lg:hover:line-through lg:decoration-solid lg:decoration-4 decoration-[#9cb571]">LOGIN</a></li>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
     <div class="flex justify-center items-center w-full h-[70vw] bg-cover"
-        style="background-image: url({{ url('img/welcomePage.png') }})">
+        style="background-image: url({{ url('img/welcomePage.png') }})" id="home">
         <img src="{{ url('/img/headline.png') }}" class="res w-3/5 -translate-y-1/4" alt="">
     </div>
     <div class="relative">
@@ -37,7 +79,7 @@
                 <span>🎂</span>
             </div>
         </div>
-        <div class="">
+        <div class="" id="competition">
             <div class="w-full">
                 <img src="{{ url('/img/batasBawah.png') }}" class="overlap-show w-full">
             </div>
@@ -70,8 +112,8 @@
                                         alt=""></div>
                                 <div
                                     class="back rounded-lg saintek flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/saintekBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
+                                    <img src="{{ url('/img/jenis/saintekBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
                                     <a href="#" class="lombabtn saintekbtn">Daftar</a>
                                     <a href="#" class="lombabtn saintekbtn">Juknis</a>
                                 </div>
@@ -85,8 +127,8 @@
                                 </div>
                                 <div
                                     class="back rounded-lg saintek flex flex-col gap-[1.5vw] items-center justify-center border-[0.3vw] w-full h-full">
-                                    <img src="{{ url('/img/jenis/saintekBorder.svg') }}" class="w-[90%] -z-30 absolute"
-                                        alt="">
+                                    <img src="{{ url('/img/jenis/saintekBorder.svg') }}"
+                                        class="w-[90%] -z-30 absolute" alt="">
                                     <a href="#" class="lombabtn saintekbtn">Daftar</a>
                                     <a href="#" class="lombabtn saintekbtn">Juknis</a>
                                 </div>
@@ -421,6 +463,56 @@
                 <img src="{{ url('img/aboutBawah.svg') }}" alt="" class="z-30 p-[2vw] md:p-[1vw]">
             </div>
         </div>
+        <div class="relative">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1961.8 145.64" class="absolute top-4"><defs><style>.cls-1,.cls-2{fill:#fff;}.cls-1{stroke:#275893;stroke-miterlimit:10;stroke-width:9px;}.cls-3{fill:#275893;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M1957.3,140.39V106.75a6387,6387,0,0,0-951.39-74.67q-12.49,0-25,0t-25,0A6386.83,6386.83,0,0,0,4.5,106.75v33.64A6352,6352,0,0,1,956,65.33q12.42,0,24.86,0t24.86,0A6352.19,6352.19,0,0,1,1957.3,140.39Z"/><rect class="cls-2" x="949.01" y="16.74" width="63.77" height="63.77" transform="translate(252.91 707.84) rotate(-45)"/><path class="cls-3" d="M980.9,7.07l41.56,41.56-9.22,9.21-7.48,7.49L990.11,81l-9.21,9.22L971.69,81,956,65.33l-7.48-7.49-9.22-9.21,9.22-9.22,7.33-7.33,15.8-15.79,9.21-9.22m0-7.07-3.54,3.54-9.21,9.21-15.8,15.8L945,35.88l-9.21,9.21-3.54,3.54,3.54,3.53L945,61.38l7.49,7.48,15.64,15.65,9.21,9.21,3.54,3.54,3.54-3.54,9.21-9.21,15.64-15.64,7.49-7.49,9.21-9.22,3.54-3.53L1026,45.09,984.44,3.54,980.9,0Z"/><rect class="cls-2" x="939.54" y="39.61" width="18.03" height="18.03" transform="translate(243.46 684.99) rotate(-45)"/><path class="cls-3" d="M948.55,39.41l9.22,9.22-9.22,9.21-9.21-9.21,9.21-9.22m0-7.07L945,35.88l-9.21,9.21-3.54,3.54,3.54,3.53L945,61.38l3.53,3.53,3.54-3.53,9.21-9.22,3.54-3.53-3.54-3.54-9.21-9.21-3.54-3.54Z"/><rect class="cls-2" x="971.88" y="71.96" width="18.03" height="18.03" transform="translate(230.04 717.31) rotate(-45)"/><path class="cls-3" d="M980.9,71.76,990.11,81l-9.21,9.22L971.69,81l9.21-9.21m0-7.07-3.54,3.53-9.21,9.22L964.61,81l3.54,3.54,9.21,9.21,3.54,3.54,3.54-3.54,9.21-9.21L997.19,81l-3.54-3.53-9.21-9.22-3.54-3.53Z"/><rect class="cls-2" x="1004.23" y="39.62" width="18.03" height="18.03" transform="translate(262.38 730.71) rotate(-45)"/><path class="cls-3" d="M1013.24,39.42l9.21,9.21-9.21,9.22L1004,48.63l9.21-9.21m0-7.07-3.54,3.53-9.21,9.22L997,48.63l3.53,3.54,9.21,9.21,3.54,3.54,3.54-3.54,9.21-9.21,3.53-3.54L1026,45.1l-9.21-9.22-3.54-3.53Z"/><rect class="cls-2" x="971.88" y="7.27" width="18.03" height="18.03" transform="translate(275.8 698.39) rotate(-45)"/><path class="cls-3" d="M980.9,7.07l9.21,9.22L980.9,25.5l-9.21-9.21,9.21-9.22m0-7.07-3.54,3.54-9.21,9.21-3.54,3.54,3.54,3.53L977.36,29l3.54,3.53L984.44,29l9.21-9.22,3.54-3.53-3.54-3.54-9.21-9.21L980.9,0Z"/><rect class="cls-3" x="973.57" y="41.3" width="14.66" height="14.66" transform="translate(252.91 707.84) rotate(-45)"/></g></g></svg>
+        </div>
+         <footer class="bg-[#336b91] flex flex-col justify-center items-center">
+        <div class="flex flex-col lg:flex-row justify-between w-3/4 mt-[150px]">
+            <div class="foo-contact lg:w-1/4 mb-8">
+                <h3 class="font-bold text-4xl text-white mb-4 lg:hover:line-through lg:decoration-8 transition-all decoration-[#ecb573]">CONTACT</h3>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +62 813-8663-1140 (Zulfan)
+                </p>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +62 821-6355-6632 (Hanif)
+                </p>
+                <p>
+                    <i class="fa-solid fa-envelope me-1"></i>
+                    zulfan@zulmuw.com
+                </p>
+                <p class="mt-2">
+                    <i class="fa-solid fa-location-dot me-1"></i>
+                    Sektor XI BSD, Jl. Cendekia No.1, Serpong, Kec. Serpong, Kota Tangerang Selatan, Banten
+                    15310
+                </p>
+                </ul>
+            </div>
+            <div class="foo-follow-us lg:w-1/4 mb-8">
+                <h3 class="font-bold text-4xl text-white mb-3 lg:hover:line-through lg:decoration-8 transition-all decoration-[#df8583]">FOLLOW US</h3>
+                <ul>
+                    <li><a href="" class="text-lg hover:text-white transition-all duration-300"><i class="fa-brands fa-instagram me-2"></i>Instagram</a></li>
+                    <li><a href="" class="text-lg hover:text-white transition-all duration-300"><i class="fa-brands fa-x-twitter me-1"></i>Twitter</a></li>
+                    <li><a href="" class="text-lg hover:text-white transition-all duration-300"><i class="fa-brands fa-youtube me-1"></i>Youtube</a></li>
+                    <li><a href="" class="text-lg hover:text-white transition-all duration-300"><i class="fa-brands fa-tiktok me-2"></i>Tiktok</a></li>
+            </div>
+            <div class="foo-location lg:w-1/4 mb-8">
+                <h3 class="font-bold text-4xl text-white mb-5 lg:hover:line-through lg:decoration-8 transition-all decoration-[#a0ba74]">LOCATION</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.5269162085324!2d106.67799617460537!3d-6.325690961896418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e51f1977cac5%3A0x4e43fafd7e8d0489!2sMAN%20Insan%20Cendekia%20Serpong!5e0!3m2!1sen!2sid!4v1704569991566!5m2!1sen!2sid"
+                    width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="flex flex-row gap-5 mt-10">
+            <img src="{{ url('/img/logo-2.png') }}" alt="Logo Kemenag" class="h-[2.5rem]">
+            <img src="{{ url('/img/logo-3.png') }}" alt="Logo MAN IC" class="h-[2.2rem]">
+            <img src="{{ url('/img/logo-4.png') }}" alt="Logo OS Cendekia" class="h-[2.2rem]">
+        </div>
+        <p class="mt-3 mb-5 text-white">&copy; Copyright SONIC LINGUISTIC 2024</p>
+    </footer>
+
         <script src="{{ url('/js/home.js') }}"></script>
 </body>
 
