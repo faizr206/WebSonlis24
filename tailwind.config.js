@@ -6,13 +6,7 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {
-      fontFamily:{
-        'motley':['"Motley Forces"', 'sans-serif'],
-        'sunday':['"Sunday Grapes"', 'sans-serif'],
-        'montserrat':['"Montserrat"', 'sans-serif'],
-      },
-    },
+    extend: {},
   },
   plugins: [],
 }
