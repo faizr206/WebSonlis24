@@ -1,3 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components{
+    .res{
+        @apply hover:scale-105 duration-200 ease-in-out
+    }
+    .navbtn{
+        @apply bg-slate-400 rounded-lg py-1 px-2 w-24 text-center
+    }
+
+    .countdown{
+        @apply flex flex-col items-center justify-center
+    }
+
+    .cntnum{
+        @apply text-[8vw] md:text-[10vw] pb-0 md:pb-[3vw]
+    }
+
+    .lombabtn{
+        @apply text-[70%] lg:text-[100%] rounded-lg p-1.5 md:p-2 font-montserrat font-semibold text-white shadow-md hover:scale-105 duration-150
+    }
+
+    .lombacard{
+        @apply w-[16%] sm:w-[14%] md:w-[12%] lg:w-[11%] xl:w-[10%]
+    }
+
+    .milih{
+        @apply border-white border-4 shadow-lg bg-white p-2 rounded-3xl text-xl md:text-2xl xl:text-3xl text-[#2a4b9b] opacity-70 hover:opacity-100 transition-all duration-300 ease-in-out
+    }
+
+    .saintek{
+        @apply bg-[#a5ce45] border-[#869C52]
+    }
+    .journal{
+        @apply bg-[#f3d7e8] border-[#BF8AAA]
+    }
+    .language{
+        @apply bg-[#97daf8] border-[#9FB9C4]
+    }
+    .sac{
+        @apply bg-[#ffc533] border-[#CCA952]
+    }
+
+    .saintekbtn{
+        @apply bg-[#869C52]
+    }
+    .journalbtn{
+        @apply bg-[#BF8AAA]
+    }
+    .languagebtn{
+        @apply bg-[#9FB9C4]
+    }
+    .sacbtn{
+        @apply bg-[#CCA952]
+    }
+}

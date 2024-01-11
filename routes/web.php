@@ -17,10 +17,27 @@ use App\Http\Controllers\BackEndController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/register', function () {
+    return view('register');
+});
+
+Route::get('/upload/{nama}', [UploadController::class, 'upload'])->name('upload');
+Route::post('/uploads/{nama}', [UploadController::class, 'uploadPost'])->name('upload.post');
+
 Route::get('/', [FrontEndController::class, 'Main'])->middleware('auth');
 Route::get('/profile', [FrontEndController::Class, 'Profile'])->middleware('auth');
-Route::get('/register', [FrontEndController::class, 'Register'])->middleware('guest');
-Route::get('/login', [FrontEndController::class, 'Login'])->middleware('guest');
 Route::get('/forgotPassword', [FrontEndController::class, 'ForgotPassword'])->middleware('guest');
 Route::get('/resetPassword', [FrontEndController::class, 'ResetPassword'])->name('password.reset')->middleware('guest');
 Route::get('/lomba', [FrontEndController::class, 'Lomba'])->middleware('auth');
@@ -39,5 +56,3 @@ Route::post('/deleteTeam', [BackEndController::class, 'DeleteTeam']);
 Route::post('/addParticipant', [BackEndController::class, 'AddParticipant']);
 Route::post('/deleteParticipant', [BackEndController::class, 'DeleteParticipant']);
 Route::post('/lomba/{team}', [BackEndController::class, 'Team'])->middleware('auth');
-Route::get('/upload/{nama}', [UploadController::class, 'upload'])->name('upload');
-Route::post('/uploads/{nama}', [UploadController::class, 'uploadPost'])->name('upload.post');
