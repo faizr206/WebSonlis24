@@ -54,10 +54,10 @@
                 </div>
                 <div
                     class="nav-right hidden lg:flex flex lg:flex-row flex-col lg:items-center lg:order-last gap-4 lg:gap-10 my-3 ms-1 me-4">
-                    <li><a href=""
+                    <li><a href="/register"
                             class="underline underline-offset-4 decoration-wavy decoration-2 lg:no-underline lg:hover:bg-slate-200 rounded-lg duration-200 p-1 lg:decoration-solid lg:decoration-4 decoration-[#df8583]">REGISTER</a>
                     </li>
-                    <li><a href=""
+                    <li><a href="/login"
                             class="underline underline-offset-4 decoration-wavy decoration-2 lg:no-underline lg:hover:bg-slate-200 rounded-lg duration-200 p-1 lg:decoration-solid lg:decoration-4 decoration-[#9cb571]">LOGIN</a>
                     </li>
                 </div>
@@ -529,8 +529,8 @@
                 </div>
             </div>
             <div class="flex flex-row gap-5 mt-10">
-                <img src="{{ url('/img/logo-2.png') }}" alt="Logo Kemenag" class="h-[2.5rem]">
-                <img src="{{ url('/img/logo-3.png') }}" alt="Logo MAN IC" class="h-[2.2rem]">
+                <img src="{{ url('/img/logo-3.png') }}" alt="Logo Kemenag" class="h-[2.5rem]">
+                <img src="{{ url('/img/logo-2.png') }}" alt="Logo MAN IC" class="h-[2.2rem]">
                 <img src="{{ url('/img/logo-4.png') }}" alt="Logo OS Cendekia" class="h-[2.2rem]">
             </div>
             <p class="mt-3 mb-5 text-white">&copy; Copyright SONIC LINGUISTIC 2024</p>

@@ -9,9 +9,10 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class=" bg-green-300">
+<body class=" bg-[#f8e8a0]">
     <div class="flex items-center justify-center mx-auto px-6 py-10">
-        <div class=" bg-slate-500 w-1/3 rounded-xl py-5 px-10">
+        <div
+            class=" bg-[#ffc533] drop-shadow-[0_15px_15px_rgba(0,0,0,0.3)] w-5/6 md:w-2/3 lg:w-1/2 xl:w-1/3 rounded-xl py-5 px-10">
             <div class="text-2xl font-montserrat font-bold mb-4">Registrasi</div>
             <form action="#" class=" space-y-4">
                 <div>
