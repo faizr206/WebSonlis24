@@ -54,10 +54,10 @@
                 </div>
                 <div
                     class="nav-right hidden lg:flex flex lg:flex-row flex-col lg:items-center lg:order-last gap-4 lg:gap-10 my-3 ms-1 me-4">
-                    <li><a href=""
+                    <li><a href="/register"
                             class="underline underline-offset-4 decoration-wavy decoration-2 lg:no-underline lg:hover:bg-slate-200 rounded-lg duration-200 p-1 lg:decoration-solid lg:decoration-4 decoration-[#df8583]">REGISTER</a>
                     </li>
-                    <li><a href=""
+                    <li><a href="/login"
                             class="underline underline-offset-4 decoration-wavy decoration-2 lg:no-underline lg:hover:bg-slate-200 rounded-lg duration-200 p-1 lg:decoration-solid lg:decoration-4 decoration-[#9cb571]">LOGIN</a>
                     </li>
                 </div>
