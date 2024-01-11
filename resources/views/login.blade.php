@@ -14,5 +14,5 @@
         <button type="submit">Login</button>
     </form>
     <a href="forgotPassword">Forgot Password?</a>
-
+</body>
 </html>
