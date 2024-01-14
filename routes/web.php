@@ -27,10 +27,10 @@ Route::get('/home', function () {
 
 Route::get('/login', function () {
     return view('login');
-});
+})->middleware('guest');
 
 Route::get('/register', function () {
-    return view('register');
+    return view('register')->middleware('guest');
 });
 
 Route::get('/upload/{nama}', [UploadController::class, 'upload'])->name('upload');
@@ -43,6 +43,8 @@ Route::get('/resetPassword', [FrontEndController::class, 'ResetPassword'])->name
 Route::get('/lomba', [FrontEndController::class, 'Lomba'])->middleware('auth');
 Route::get('/lomba/{team}', [FrontEndController::class, 'Team'])->middleware('auth');
 Route::get('/admin', [FrontendController::class, 'Admin'])->middleware('auth')->middleware('admin');
+
+Route::get('/admin/{id}', [FrontEndController::class, 'User'])->middleware('admin');
 
 Route::post('/register', [BackEndController::class, 'Register']);
 Route::post('/login', [BackEndController::class, 'Login']);

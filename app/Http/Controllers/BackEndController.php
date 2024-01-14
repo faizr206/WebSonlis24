@@ -46,6 +46,8 @@ class BackEndController extends Controller
 
             return redirect()->intended('/');
         }
+
+        return back();
     }
     
     public static function Logout(Request $request)

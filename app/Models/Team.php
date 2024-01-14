@@ -21,6 +21,11 @@ class Team extends Model
         return $this->belongsTo('App\Models\User');
     }
 
+    public function competition()
+    {
+        return $this->belongsTo('App\Models\Competition');
+    }
+
     public function participants()
     {
         return $this->hasMany('App\Models\Participant', 'team_id');

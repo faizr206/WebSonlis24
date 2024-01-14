@@ -54,6 +54,15 @@ class FrontEndController extends Controller
 
     public static function Admin()
     {
-        return view('admin');
+        return view('admin', [
+            'users' => \App\Models\User::all()
+        ]);
+    }
+
+    public static function User($id)
+    {
+        return view('user', [
+            'user' =>\App\Models\User::all()->where('id', $id)->first()
+        ]);
     }
 }

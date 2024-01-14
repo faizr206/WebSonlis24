@@ -7,6 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    Admin only
+    <table>
+        <tr>
+            <th>No.</th>
+            <th>Username</th>
+            <th>Jenjang</th>
+            <th>Asal Sekolah</th>
+        </tr>
+        @for ($i = 0; $i < count($users); $i++)
+        <tr>
+            <td>{{$i+1}}</td>
+            <td><a href="/admin/{{$users[$i]->id}}">{{$users[$i]->username}}</a></td>
+            <td>{{$users[$i]->jenjang}}</td>
+            <td>{{$users[$i]->sekolah}}</td>
+        </tr>
+        @endfor
+    </table>
 </body>
 </html>
