@@ -42,6 +42,14 @@ class FrontEndController extends Controller
         return view('lomba');
     }
 
+    public static function Dashboard()
+    {
+        return view('dashboard', [
+            'competitions' => \App\Models\Competition::all(),
+            'participants' => \Illuminate\Support\Facades\Auth::user()->participants
+        ]);
+    }
+
     public static function Admin()
     {
         return view('admin', [

@@ -80,8 +80,9 @@
                 <form action="">
                     <label for="">Pilih Perlombaan :</label>
                     <select name="" id="" class="rounded-md p-1">
-                        <option value="sciencecomp">Science Comp</option>
-                        <option value="mathcomp">Math Comp</option>
+                        @foreach ($competitions as $competition)
+                            <option>{{$competition->name}}</option>
+                        @endforeach
                     </select>
                 </form>
             </div>
@@ -89,29 +90,35 @@
             <div class="flex flex-col">
                 <div class="flex flex-row">
                     <div>Peserta</div>
-                    <button class="bg-[#CCA952] rounded-md px-1 mx-2">+</button>
+                    <button class="bg-[#CCA952] rounded-md px-1 mx-2" onclick="TambahPeserta('{{csrf_token()}}', {{Auth::user()->id}})">+</button>
                 </div>
-                <div class="flex flex-col my-1">
-                    <form action="" class=" bg-[#97daf8] p-2 space-y-2 rounded-lg shadow-md">
-                        <div>
-                            <label for="">Nama :</label>
-                            <input type="text" name="" id="" class="p-1 rounded-md">
-                        </div>
-                        <div>
-                            <label for="">Kartu Pelajar : </label>
-                            <input type="file" name="file" id="">
-                        </div>
-                        <div>
-                            <label for="">Story Instagram : </label>
-                            <input type="file" name="file" id="">
-                        </div>
-                        <div>
-                            <label for="">Kartu Pelajar : </label>
-                            <input type="file" name="file" id="">
-                        </div>
+                <div id="participants">
+                    @foreach ($participants as $participant)
+                    <div class="flex flex-col my-1">
+                        <form method="POST" action="/dashboard/peserta" class=" bg-[#97daf8] p-2 space-y-2 rounded-lg shadow-md">
+                            @csrf
+                            <input type="hidden" name="participant_id" value="{{$participant->id}}">
+                            <div>
+                                <label for="">Nama :</label>
+                                <input type="text" name="name" value="{{$participant->name}}" id="" class="p-1 rounded-md">
+                            </div>
+                            <div>
+                                <label for="">Kartu Pelajar : </label>
+                                <input type="file" name="file" id="">
+                            </div>
+                            <div>
+                                <label for="">Story Instagram : </label>
+                                <input type="file" name="file" id="">
+                            </div>
+                            <div>
+                                <label for="">Kartu Pelajar : </label>
+                                <input type="file" name="file" id="">
+                            </div>
 
-                        <input type="submit" value="Submit" class=" bg-[#a5ce45] py-1 px-2 rounded">
-                    </form>
+                            <input type="submit" value="Submit" class=" bg-[#a5ce45] py-1 px-2 rounded">
+                        </form>
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -179,6 +186,7 @@
     </footer>
 
     <script src="{{ url('/js/home.js') }}"></script>
+    <script src="{{ url('/js/participant.js') }}"></script>
 </body>
 
 </html>

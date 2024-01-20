@@ -114,13 +114,29 @@ class BackEndController extends Controller
         return redirect('login');
     }
 
+    public static function Dashboard_Participant(Request $request)
+    {
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        Participant::where('id', $request->participant_id)->update($request->only('name'));
+        return back();
+    }
+
+    public static function GetParticipant(Request $request)
+    {
+        echo view('participants', [
+            'participants' => Participant::all()->where('user_id', $request->user_id)
+        ]);
+    }
+
     public static function AddParticipant(Request $request)
     {
         $participant = Participant::create([
             'user_id' => $request->user_id,
             'name' => "unnamed"
         ]);
-        return back();
     }
 
     public static function DeleteParticipant(Request $request)

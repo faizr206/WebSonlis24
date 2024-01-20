@@ -11,11 +11,8 @@
     {{$user->username}}<br>
     {{$user->jenjang}}<br>
     {{$user->sekolah}}<br>
-    @foreach ($user->teams as $team)
-    <b>{{$team->competition->name . $team->id}}</b><br>
-    @foreach ($team->participants as $participant)
+    @foreach (Auth::user()->participants as $participant)
     ---{{$participant->name}}<br>
-    @endforeach
     @endforeach
     
     <form method="POST" action="/admin/edit">

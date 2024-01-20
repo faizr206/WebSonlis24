@@ -45,7 +45,9 @@ Route::get('/profile', [FrontEndController::Class, 'Profile'])->middleware('auth
 Route::get('/forgotPassword', [FrontEndController::class, 'ForgotPassword'])->middleware('guest');
 Route::get('/resetPassword', [FrontEndController::class, 'ResetPassword'])->name('password.reset')->middleware('guest');
 Route::get('/lomba', [FrontEndController::class, 'Lomba'])->middleware('auth');
+Route::get('/dashboard', [FrontEndController::class, 'Dashboard'])->middleware('auth');
 Route::get('/admin', [FrontendController::class, 'Admin'])->middleware('auth')->middleware('admin');
+Route::post('/getParticipant', [BackEndController::class, 'GetParticipant']);
 
 Route::get('/admin/{id}', [FrontEndController::class, 'User'])->middleware('admin');
 
@@ -60,3 +62,4 @@ Route::post('/addParticipant', [BackEndController::class, 'AddParticipant']);
 Route::post('/deleteParticipant', [BackEndController::class, 'DeleteParticipant']);
 Route::post('/lomba/{team}', [BackEndController::class, 'Team'])->middleware('auth');
 Route::post('/admin/edit', [BackEndController::class, 'Edit'])->middleware('admin');
+Route::post('/dashboard/peserta', [BackEndController::class, 'Dashboard_Participant']);
