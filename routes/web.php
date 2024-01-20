@@ -33,6 +33,10 @@ Route::get('/register', function () {
     return view('register')->middleware('guest');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
 Route::get('/upload/{nama}', [UploadController::class, 'upload'])->name('upload');
 Route::post('/uploads/{nama}', [UploadController::class, 'uploadPost'])->name('upload.post');
 

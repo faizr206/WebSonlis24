@@ -529,8 +529,8 @@
                 </div>
             </div>
             <div class="flex flex-row gap-5 mt-10">
-                <img src="{{ url('/img/logo-2.png') }}" alt="Logo Kemenag" class="h-[2.5rem]">
-                <img src="{{ url('/img/logo-3.png') }}" alt="Logo MAN IC" class="h-[2.2rem]">
+                <img src="{{ url('/img/logo-3.png') }}" alt="Logo Kemenag" class="h-[2.5rem]">
+                <img src="{{ url('/img/logo-2.png') }}" alt="Logo MAN IC" class="h-[2.2rem]">
                 <img src="{{ url('/img/logo-4.png') }}" alt="Logo OS Cendekia" class="h-[2.2rem]">
             </div>
             <p class="mt-3 mb-5 text-white">&copy; Copyright SONIC LINGUISTIC 2024</p>
