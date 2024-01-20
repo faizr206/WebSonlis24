@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,15 @@ Route::get('/register', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+Route::get('/admin', function () {
+    return view('admin');
+});
+Route::get('/admin2', function () {
+    return view('admin2');
+});
+
+Route::get('/file/{filename}', [FileController::class, 'download']);
 
 Route::get('/upload/{nama}', [UploadController::class, 'upload'])->name('upload');
 Route::post('/uploads/{nama}', [UploadController::class, 'uploadPost'])->name('upload.post');

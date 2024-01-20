@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     @vite('resources/css/app.css')
+
 </head>
 
-<body class=" bg-[#f8e8a0] items-center justify-center">
+<body style="background-image: url({{ url('img/flowerBg.png') }})" class="bg-center items-center justify-center">
     <div class="flex items-center justify-center">
         <div
             class="flex flex-col bg-[#ffc533] drop-shadow-[0_15px_15px_rgba(0,0,0,0.3)] w-5/6 md:w-2/3 lg:w-1/2 xl:w-1/3 mt-28 rounded-xl py-5 px-10">

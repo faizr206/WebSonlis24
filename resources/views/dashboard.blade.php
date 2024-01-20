@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home Page</title>
+    <title>Dashboard</title>
     @vite('resources/css/app.css')
 
     <link rel="stylesheet" href="{{ url('/css/home.css') }}">
     <script src="https://kit.fontawesome.com/e2e4af9857.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="font-[montserrat] bg-[#edf1be] overflow-x-hidden">
+<body style="background-image: url({{ url('img/skyBg.png') }})"
+    class="bg-cover bg-center font-[montserrat] overflow-x-hidden">
 
     {{-- @yield('navbar') --}}
     <nav class="h-15 flex justify-center items-center lg:pt-10 w-full sticky top-0 lg:fixed drop-shadow-sm"
@@ -75,7 +76,7 @@
         </div>
     </div>
     <div class="flex items-center justify-center mt-10">
-        <div class="bg-[#ffc533] flex flex-col p-4 rounded-xl space-y-2 w-2/3">
+        <div class="bg-[#ffc533] shadow-lg flex flex-col p-4 rounded-xl space-y-2 w-2/3">
             <div class="flex">
                 <form action="">
                     <label for="">Pilih Perlombaan :</label>
