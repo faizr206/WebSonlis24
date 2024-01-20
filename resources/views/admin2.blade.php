@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin</title>
+    <title>Admin2</title>
     @vite('resources/css/app.css')
 
     <link rel="stylesheet" href="{{ url('/css/home.css') }}">
@@ -17,7 +17,6 @@
         th,
         td {
             border: 1px solid black;
-            text-align: center;
         }
     </style>
 </head>
@@ -76,7 +75,37 @@
         </div>
     </nav>
 
-    <table class="w-2/3 mx-5 mt-52 bg-yellow-200 rounded-lg">
+    <div class="flex flex-col items-start justify-start p-3 rounded-2xl bg-blue-200 mt-52 mx-10">
+        <div class="flex flex-col">
+            <div class="flex flex-row">
+                <div>Sekolah : </div>
+                <div>(nama sekolah)</div>
+            </div>
+            <div class="flex flex-row">
+                <div>Lomba : </div>
+                <div>(nama lomba)</div>
+            </div>
+            <div class="flex flex-row">
+                <div>dll </div>
+                <div>(dll)</div>
+            </div>
+        </div>
+        <table class="my-5">
+            <tr>
+                <th>Nama</th>
+                <th>Kartu Pelajar</th>
+            </tr>
+            <tr>
+                <td>Rempah</td>
+                <td><a href="#" class="underline">ini</a></td>
+            </tr>
+            <tr>
+                <td>Rempahhhhh</td>
+                <td><a href="#" class="underline">ini</a></td>
+            </tr>
+        </table>
+    </div>
+    <table class="w-2/3 mx-5 mt-52 bg-red-100 rounded-lg">
         <tr>
             <th>Company</th>
             <th>Contact</th>
