@@ -42,7 +42,7 @@ Route::get('/admin2', function () {
     return view('admin2');
 });
 
-Route::get('/file/{filename}', [FileController::class, 'download']);
+Route::get('/admin2/file/{nama}/{filename}', [FileController::class, 'download']);
 
 Route::get('/upload/{nama}', [UploadController::class, 'upload'])->name('upload');
 Route::post('/uploads/{nama}', [UploadController::class, 'uploadPost'])->name('upload.post');

@@ -75,56 +75,56 @@
         </div>
     </nav>
 
-    <div class="flex flex-col items-start justify-start p-3 rounded-2xl bg-blue-200 mt-52 mx-10">
-        <div class="flex flex-col">
-            <div class="flex flex-row">
-                <div>Sekolah : </div>
-                <div>(nama sekolah)</div>
+    <div class="flex flex-row items-center justify-center mt-52">
+        <div class="flex flex-col basis-1/2 items-start justify-start p-3 rounded-2xl bg-blue-200 my-10 mx-10">
+            <div class="flex flex-col">
+                <div class="flex flex-row">
+                    <div>Sekolah : </div>
+                    <div>(nama sekolah)</div>
+                </div>
+                <div class="flex flex-row">
+                    <div>Lomba : </div>
+                    <div>(nama lomba)</div>
+                </div>
+                <div class="flex flex-row">
+                    <div>dll </div>
+                    <div>(dll)</div>
+                </div>
             </div>
-            <div class="flex flex-row">
-                <div>Lomba : </div>
-                <div>(nama lomba)</div>
-            </div>
-            <div class="flex flex-row">
-                <div>dll </div>
-                <div>(dll)</div>
-            </div>
+            <table class="my-5">
+                <tr>
+                    <th>Nama</th>
+                    <th>Kartu Pelajar</th>
+                </tr>
+                <tr>
+                    <td>Rempah</td>
+                    <td><a href="/admin2/file/nama/namafile.extension" class="underline" target="_blank">ini</a></td>
+                </tr>
+                <tr>
+                    <td>Rempahhhhh</td>
+                    <td><a href="#" class="underline">ini</a></td>
+                </tr>
+            </table>
         </div>
-        <table class="my-5">
-            <tr>
-                <th>Nama</th>
-                <th>Kartu Pelajar</th>
-            </tr>
-            <tr>
-                <td>Rempah</td>
-                <td><a href="#" class="underline">ini</a></td>
-            </tr>
-            <tr>
-                <td>Rempahhhhh</td>
-                <td><a href="#" class="underline">ini</a></td>
-            </tr>
-        </table>
+        <div class="flex flex-col items-start rounded-2xl justify-start p-3 bg-red-200 mx-10">
+            <form action="" class="space-y-2">
+                <div>
+                    <label for="">Status :</label>
+                    <select name="" id="" class="rounded-md p-1">
+                        <option value="">valid</option>
+                        <option value="">tidak valid</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="">Deskripsi (bila tidak valid) : </label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class=" items-end justify-end">
+                    <button type="submit" class="bg-red-400 rounded-md hover:opacity-70 p-1">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <table class="w-2/3 mx-5 mt-52 bg-red-100 rounded-lg">
-        <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
-            <th>button</th>
-        </tr>
-        <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-            <td><a href="/admin2" class=" underline">halo</a></td>
-        </tr>
-        <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
-            <td><a href="/admin2" class="underline">halo</a></td>
-        </tr>
-    </table>
 
 
     <script src="{{ url('/js/home.js') }}"></script>
