@@ -22,6 +22,7 @@
             <td>{{$users[$i]->sekolah}}</td>
         </tr>
         @endfor
+
     </table>
 </body>
 </html>

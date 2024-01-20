@@ -58,3 +58,4 @@ Route::post('/deleteTeam', [BackEndController::class, 'DeleteTeam']);
 Route::post('/addParticipant', [BackEndController::class, 'AddParticipant']);
 Route::post('/deleteParticipant', [BackEndController::class, 'DeleteParticipant']);
 Route::post('/lomba/{team}', [BackEndController::class, 'Team'])->middleware('auth');
+Route::post('/admin/edit', [BackEndController::class, 'Edit'])->middleware('admin');

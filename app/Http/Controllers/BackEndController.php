@@ -163,4 +163,14 @@ class BackEndController extends Controller
 
         return back();
     }
+
+    public static function Edit(Request $request)
+    {
+        $user = User::all()->where('id', $request->id)->first();
+        $user->update([
+            'status' => $request->status,
+            'comment' => $request->comment
+        ]);
+        return back();
+    }
 }
