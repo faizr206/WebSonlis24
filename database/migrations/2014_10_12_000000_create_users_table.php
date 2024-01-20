@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('sekolah');
             $table->string('jenjang');
+            $table->string('lomba')->nullable();
             $table->boolean('admin')->default(false);
             $table->string('status')->default("Belum");
             $table->string('comment')->default('');

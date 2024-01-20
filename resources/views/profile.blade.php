@@ -13,12 +13,20 @@
         Username: <input type="text" name="username" value="{{Auth::user()->username}}"> <br>
         Email: <input type="email" name="email" value="{{Auth::user()->email}}"> <br>
         Asal Sekolah: <input type="text" name="sekolah" value="{{Auth::user()->sekolah}}"> <br>
+        Lomba:
+        <select name="lomba">
+            <option>{{Auth::user()->lomba}}</option>
+            @foreach(Session::get('competitions') as $competition)
+            <option>{{$competition->name}}</option>
+            @endforeach
+        </select><br>
         <button type="submit">Save</button>
     </form>
     @else
         Username: {{Auth::user()->username}}<br>
         Email: {{Auth::user()->email}}<br>
         Asal Sekolah: {{Auth::user()->sekolah}}<br>
+        Lomba: {{Auth::user()->lomba}}
         <form method="POST" action="/profile/edit">
             @csrf
             <button type="submit">Edit</button>

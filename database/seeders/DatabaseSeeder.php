@@ -49,23 +49,18 @@ class DatabaseSeeder extends Seeder
             'peserta' => 1,
         ]);
 
-        \App\Models\Team::create([
-            'user_id' => 1,
-            'competition_id' => 1
-        ]);
-
         \App\Models\Participant::create([
-            'team_id' => 1,
+            'user_id' => 1,
             'name' => 'Peserta 1'
         ]);
 
         \App\Models\Participant::create([
-            'team_id' => 1,
+            'user_id' => 1,
             'name' => 'Peserta 2'
         ]);
 
         \App\Models\Participant::create([
-            'team_id' => 1,
+            'user_id' => 1,
             'name' => 'Peserta 3'
         ]);
     }

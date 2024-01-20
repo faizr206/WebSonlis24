@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('participants', function (Blueprint $table) {
             $table->id();
-            $table->string('team_id');
+            $table->string('user_id');
             $table->string('name');
+            $table->string('filepath')->nullable();
             $table->timestamps();
         });
     }

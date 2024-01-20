@@ -63,19 +63,21 @@ class BackEndController extends Controller
     {
         $edit = true;
         return back()->with([
-            'edit' => true
+            'edit' => true,
+            'competitions' => Competition::all()
         ]);
     }
 
     public static function Profile(Request $request)
     {
-        $validatedRequest = $request->validate([
+        $request->validate([
             'username' => 'required',
             'email' => 'required|email:dns',
-            'sekolah' => 'required'
+            'sekolah' => 'required',
+            'lomba' => 'required'
         ]);
         $user = Auth::user();
-        $user->update($validatedRequest);
+        $user->update($request->all());
         return back()->with([
             'edit' => false
         ]);
@@ -112,33 +114,10 @@ class BackEndController extends Controller
         return redirect('login');
     }
 
-    public static function AddTeam(Request $request)
-    {
-        $competition = Competition::where('name', $request->competitionName)->first();
-
-        $team = Team::create([
-            'user_id' => Auth::user()->id,
-            'competition_id' => $competition->id
-        ]);
-
-        return back();
-    }
-
-    public static function DeleteTeam(Request $request)
-    {
-        $team = Auth::user()->teams->where('id', $request->team)->first();
-        foreach($team->participants as $participant)
-        {
-            $participant->delete();
-        }
-        $team->delete();
-        return back();
-    }
-
     public static function AddParticipant(Request $request)
     {
         $participant = Participant::create([
-            'team_id' => $request->team,
+            'user_id' => $request->user_id,
             'name' => "unnamed"
         ]);
         return back();
@@ -147,20 +126,10 @@ class BackEndController extends Controller
     public static function DeleteParticipant(Request $request)
     {
         $participant = Participant::where('id', $request->participant)->first();
-        if($participant->team->user == Auth::user())
+        if($participant->user == Auth::user())
         {
             $participant->delete();
         }
-        return back();
-    }
-
-    public static function Team(Request $request)
-    {
-        $team = Team::all()->where('id', $request->team)->first();
-        foreach ($team->participants as $participant) {
-            $participant->update(['name' => ($request[$participant->id]!="")? $request[$participant->id] : ""]);
-        }
-
         return back();
     }
 

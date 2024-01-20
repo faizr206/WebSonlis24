@@ -39,17 +39,7 @@ class FrontEndController extends Controller
 
     public static function Lomba()
     {
-        return view('lomba', [
-            'competitions' => \App\Models\Competition::all()->where('jenjang', \Illuminate\Support\Facades\Auth::user()->jenjang),
-            'teams' => \Illuminate\Support\Facades\Auth::user()->teams
-        ]);
-    }
-
-    public static function Team($team)
-    {
-        return view('team', [
-            'team' => \Illuminate\Support\Facades\Auth::user()->teams->where('id', $team)->first(),
-        ]);
+        return view('lomba');
     }
 
     public static function Admin()

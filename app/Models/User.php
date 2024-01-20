@@ -26,6 +26,7 @@ class User extends Authenticatable
         'password',
         'sekolah',
         'jenjang',
+        'lomba',
         'admin',
         'status',
         'comment'
@@ -51,8 +52,8 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function teams()
+    public function participants()
     {
-        return $this->hasMany('App\Models\Team', 'user_id');
+        return $this->hasMany('App\Models\Participant', 'user_id');
     }
 }

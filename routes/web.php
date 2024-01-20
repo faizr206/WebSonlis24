@@ -41,7 +41,6 @@ Route::get('/profile', [FrontEndController::Class, 'Profile'])->middleware('auth
 Route::get('/forgotPassword', [FrontEndController::class, 'ForgotPassword'])->middleware('guest');
 Route::get('/resetPassword', [FrontEndController::class, 'ResetPassword'])->name('password.reset')->middleware('guest');
 Route::get('/lomba', [FrontEndController::class, 'Lomba'])->middleware('auth');
-Route::get('/lomba/{team}', [FrontEndController::class, 'Team'])->middleware('auth');
 Route::get('/admin', [FrontendController::class, 'Admin'])->middleware('auth')->middleware('admin');
 
 Route::get('/admin/{id}', [FrontEndController::class, 'User'])->middleware('admin');
@@ -53,8 +52,6 @@ Route::post('/profile/edit', [BackEndController::class, 'ProfileEdit']);
 Route::post('/profile', [BackEndController::class, 'Profile']);
 Route::post('/forgotPassword', [BackEndController::class, 'ForgotPassword']);
 Route::post('/resetPassword', [BackEndController::class, 'ResetPassword']);
-Route::post('/addTeam', [BackEndController::class, 'AddTeam']);
-Route::post('/deleteTeam', [BackEndController::class, 'DeleteTeam']);
 Route::post('/addParticipant', [BackEndController::class, 'AddParticipant']);
 Route::post('/deleteParticipant', [BackEndController::class, 'DeleteParticipant']);
 Route::post('/lomba/{team}', [BackEndController::class, 'Team'])->middleware('auth');
