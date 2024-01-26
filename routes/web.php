@@ -70,6 +70,7 @@ Route::post('/forgotPassword', [BackEndController::class, 'ForgotPassword']);
 Route::post('/resetPassword', [BackEndController::class, 'ResetPassword']);
 Route::post('/addParticipant', [BackEndController::class, 'AddParticipant']);
 Route::post('/deleteParticipant', [BackEndController::class, 'DeleteParticipant']);
+Route::post('/changeCompetition', [BackEndController::class, 'ChangeCompetition']);
 Route::post('/lomba/{team}', [BackEndController::class, 'Team'])->middleware('auth');
 Route::post('/admin/edit', [BackEndController::class, 'Edit'])->middleware('admin');
 Route::post('/dashboard/peserta', [BackEndController::class, 'Dashboard_Participant']);

@@ -1,5 +1,6 @@
 let participants = document.getElementById("participants");
 let tambahPeserta = document.getElementById("tambahPeserta");
+let lomba = document.getElementById("lomba")
 
 function TambahPeserta(csrf, userId)
 {
@@ -38,5 +39,25 @@ function GantiNama(csrf, peserta)
 
     changeName.open("POST", "/addParticipant");
     changeName.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    changeName.setRequestHeader("X-CSRF-Token", csrf);
     changeName.send();
+}
+
+function GantiLomba(csrf, lombaSekarang)
+{
+    if(confirm("Ingin mengganti lomba menjadi " + lomba.value + "?\n(Semua peserta yang sudah ditambahkan akan dihapus!)"))
+    {
+        let changeCompetition = new XMLHttpRequest();
+        changeCompetition.onload = ()=>{
+            
+        };
+        changeCompetition.open("POST", "/changeCompetition");
+        changeCompetition.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        changeCompetition.setRequestHeader("X-CSRF-Token", csrf);
+        changeCompetition.send("competition=" + lomba.value);
+    }
+    else
+    {
+        lomba.value = lombaSekarang;
+    }
 }

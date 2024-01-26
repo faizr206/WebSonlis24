@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             'password' => \Illuminate\Support\Facades\Hash::make('123Reffah'),
             'sekolah' => 'MANICS',
             'jenjang' => 'SMA',
+            'lomba' => 'lomba2',
             'admin' => true
         ]);
 

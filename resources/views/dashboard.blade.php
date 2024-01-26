@@ -80,9 +80,9 @@
             <div class="flex">
                 <form action="">
                     <label for="">Pilih Perlombaan :</label>
-                    <select name="" id="" class="rounded-md p-1">
+                    <select name="" id="lomba" class="rounded-md p-1" value="{{Auth::user()->lomba}}" onchange="GantiLomba('{{csrf_token()}}', '{{Auth::user()->lomba}}')">
                         @foreach ($competitions as $competition)
-                            <option>{{$competition->name}}</option>
+                            <option @if ($competition->name == Auth::user()->lomba) selected @endif>{{$competition->name}}</option>
                         @endforeach
                     </select>
                 </form>

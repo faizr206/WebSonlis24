@@ -158,4 +158,10 @@ class BackEndController extends Controller
         ]);
         return back();
     }
+
+    public static function ChangeCompetition(Request $request)
+    {
+        Auth::user()->update(['lomba' => $request->competition]);
+        return back();
+    }
 }
