@@ -44,7 +44,7 @@
                     </div>
                 </li>
                 <div
-                    class="nav-left hidden lg:flex flex lg:flex-row flex-col lg:items-center lg:order-first gap-4 lg:gap-10 my-3 ms-1 me-1">
+                    class="nav-left hidden lg:flex lg:flex-row flex-col lg:items-center lg:order-first gap-4 lg:gap-5 my-3 ms-1 me-1">
                     <li><a href=#home
                             class="lg:hover:bg-slate-200 rounded-lg duration-200 p-1 lg:decoration-4 transition-all decoration-[#ecb573]">HOME</a>
                     </li>
@@ -53,7 +53,7 @@
                     </li>
                 </div>
                 <div
-                    class="nav-right hidden lg:flex flex lg:flex-row flex-col lg:items-center lg:order-last gap-4 lg:gap-10 my-3 ms-1 me-4">
+                    class="nav-right hidden lg:flex lg:flex-row flex-col lg:items-center lg:order-last gap-4 lg:gap-5 my-3 ms-1 me-1">
                     <li><a href="/register"
                             class="underline underline-offset-4 decoration-wavy decoration-2 lg:no-underline lg:hover:bg-slate-200 rounded-lg duration-200 p-1 lg:decoration-solid lg:decoration-4 decoration-[#df8583]">REGISTER</a>
                     </li>
@@ -96,8 +96,11 @@
                 <img src="{{ url('/img/batasBawah.png') }}" class="overlap-show w-full">
             </div>
         </div>
-        <div class="pt-[2vw] bg-[#def2fd]">
-            <h1 class=" text-center text-[6vw] font-sunday text-[#3b73b9] strokeme res">COMPETITION
+        <div class="pt-[2vw] bg-[#def2fd] relative" style="background-image: url({{ url('img/gridbg.png') }})">
+            <div class="flex items-center justify-center">
+                <img src="{{ url('img/competition.svg') }}" class="w-2/3" alt="">
+            </div>
+            <h1 class="hidden text-center text-[6vw] font-sunday text-[#3b73b9] z-50 res">COMPETITION
             </h1>
             <div class="relative hidden">
                 <img src="{{ url('img/blade1.svg') }}" class="absolute z-30 w-[10vw] drop-shadow-2xl blade1"
@@ -446,9 +449,8 @@
             </div>
         </div>
         <div class="bg-[#c6df91] flex flex-col justify-center items-center rundown">
-            <img src="{{ url('img/rundownHeadline.svg') }}" class="res coba w-[40vw] p-[2vw] m-[2vw]"
-                alt="">
-            <img src="{{ url('img/rundownTemp.svg') }}" class="w-[80vw] sm:w-[60vw] md:w-[40vw] pb-[10vw]"
+            <img src="{{ url('img/rundownHeadline.svg') }}" class="res  w-[40vw] p-[2vw] m-[2vw]" alt="">
+            <img src="{{ url('img/rundownTemp.png') }}" class="w-[80vw] sm:w-[60vw] md:w-[60vw] pb-[10vw]"
                 alt="">
         </div>
         <div class="relative">
@@ -459,7 +461,7 @@
                 <img src="{{ url('img/trailer.svg') }}" alt="" class="res w-[30%] z-30 ">
                 <iframe class="w-[70vw] h-[40vw] md:w-[50vw] md:h-[28vw] p-[2vw] z-30"
                     src="{{ url('https://www.youtube.com/embed/AEilEiOwFW0') }}"></iframe>
-                <img src="{{ url('img/about.svg') }}" alt="" class="res z-30 pt-[3vw] pb-[1vw]">
+                <img src="{{ url('img/about.svg') }}" alt="" class=" z-30 pt-[3vw] pb-[1vw]">
                 <div
                     class=" font-montserrat text-[2.5vw] sm:text-[2.3vw] md:text-[2vw] lg:text-base xl:text-lg z-30 text-center p-[1vw]">
                     SONIC LINGUISTIC (Show Your Brain on Science and Link Your Imagination on Language, Sport, Art,
