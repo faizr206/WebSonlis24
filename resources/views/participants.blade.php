@@ -1,5 +1,5 @@
 @foreach ($participants as $participant)
-<div class="flex flex-col my-1">
+<div id="participant{{$participant->id}}" class="flex flex-col my-1 p-52">
     <form method="POST" action="/dashboard/peserta" class=" bg-[#97daf8] p-2 space-y-2 rounded-lg shadow-md">
         @csrf
         <input type="hidden" name="participant_id" value="{{$participant->id}}">
@@ -24,3 +24,4 @@
     </form>
 </div>
 @endforeach
+{{$participants->last()->id}}

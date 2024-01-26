@@ -1,12 +1,18 @@
 let participants = document.getElementById("participants");
+let tambahPeserta = document.getElementById("tambahPeserta");
 
 function TambahPeserta(csrf, userId)
 {
     let addParticipant = new XMLHttpRequest();
     addParticipant.onload = ()=>{
+        tambahPeserta.disabled = true;
         let getParticipant = new XMLHttpRequest();
         getParticipant.onload = () => {
-            participants.innerHTML = getParticipant.responseText;
+            let response = getParticipant.responseText;
+            participants.innerHTML = response.substring(0, response.length-1);
+            tambahPeserta.disabled = false;
+
+            window.location = window.location.protocol + "//" + window.location.host + "/dashboard#participant" + response.substring(response.length-1, response.length+1);
         };
         getParticipant.open("POST", "/getParticipant");
         getParticipant.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

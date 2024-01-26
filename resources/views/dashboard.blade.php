@@ -91,11 +91,11 @@
             <div class="flex flex-col">
                 <div class="flex flex-row">
                     <div>Peserta</div>
-                    <button class="bg-[#CCA952] rounded-md px-1 mx-2" onclick="TambahPeserta('{{csrf_token()}}', {{Auth::user()->id}})">+</button>
+                    <button id="tambahPeserta" class="bg-[#CCA952] rounded-md px-1 mx-2" onclick="TambahPeserta('{{csrf_token()}}', {{Auth::user()->id}})">+</button>
                 </div>
                 <div id="participants">
                     @foreach ($participants as $participant)
-                    <div class="flex flex-col my-1">
+                    <div id="participant{{$participant->id}}" class="flex flex-col my-1">
                         <form method="POST" action="/dashboard/peserta" class=" bg-[#97daf8] p-2 space-y-2 rounded-lg shadow-md">
                             @csrf
                             <input type="hidden" name="participant_id" value="{{$participant->id}}">
