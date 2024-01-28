@@ -124,24 +124,28 @@ class BackEndController extends Controller
         return back();
     }
 
-    public static function GetParticipant(Request $request)
-    {
-        echo view('participants', [
-            'participants' => Participant::all()->where('user_id', $request->user_id)
-        ]);
-    }
-
     public static function AddParticipant(Request $request)
     {
         $participant = Participant::create([
-            'user_id' => $request->user_id,
+            'user_id' => Auth::user()->id,
             'name' => "unnamed"
         ]);
     }
 
+    public static function SaveParticipant(Request $request)
+    {
+        $participant = Participant::where('id', $request->participantId)->first();
+        if($participant->user == Auth::user())
+        {
+            $participant->update([
+                'name' => $request->participantName
+            ]);
+        }
+    }
+
     public static function DeleteParticipant(Request $request)
     {
-        $participant = Participant::where('id', $request->participant)->first();
+        $participant = Participant::where('id', $request->participantId)->first();
         if($participant->user == Auth::user())
         {
             $participant->delete();
@@ -162,6 +166,10 @@ class BackEndController extends Controller
     public static function ChangeCompetition(Request $request)
     {
         Auth::user()->update(['lomba' => $request->competition]);
+        foreach(Auth::user()->participants as $participant)
+        {
+            $participant->delete();
+        }
         return back();
     }
 }

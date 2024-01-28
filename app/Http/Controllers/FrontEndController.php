@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 class FrontEndController extends Controller
 {
     //
-    public static function Main()
-    {
-        return view('main');
-    }
-
     public static function Profile()
     {
         return view('profile');
@@ -61,6 +56,13 @@ class FrontEndController extends Controller
     {
         return view('user', [
             'user' =>\App\Models\User::all()->where('id', $id)->first()
+        ]);
+    }
+
+    public static function GetParticipant()
+    {
+        echo view('participants', [
+            'participants' => \Illuminate\Support\Facades\Auth::user()->participants
         ]);
     }
 }
