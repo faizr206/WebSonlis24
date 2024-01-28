@@ -85,6 +85,9 @@
                             <option @if ($competition->name == Auth::user()->lomba) selected @endif>{{$competition->name}}</option>
                         @endforeach
                     </select>
+                    <div>
+                        <input type="submit" value="Simpan" class=" bg-[#a5ce45] rounded p-1">
+                    </div>
                 </form>
             </div>
             <hr class=" border-black">
@@ -116,10 +119,16 @@
                                 <input type="file" name="file" id="">
                             </div>
 
+<<<<<<< HEAD
                             <input type="submit" value="Submit" class=" bg-[#a5ce45] py-1 px-2 rounded">
                         </form>
                     </div>
                     @endforeach
+=======
+                        <input type="submit" value="Submit" class=" bg-[#a5ce45] py-1 px-2 rounded">
+                        <input type="button" value="Hapus Peserta" class="bg-red-400 py-1 px-2 rounded">
+                    </form>
+>>>>>>> dashboard
                 </div>
             </div>
         </div>

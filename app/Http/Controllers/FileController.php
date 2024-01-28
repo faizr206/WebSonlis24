@@ -9,16 +9,8 @@ use Illuminate\Support\Facades\URL;
 
 class FileController extends Controller
 {
-    private static function getUrl($type, $file)
+    public function download($nama, $filename)
     {
-        return URL::to(Config::get('assets.' . $type) . '/' . $file);
-    }
-
-    public function download($filename)
-    {
-        return response()->file('file/syarat/faiz/' . $filename);
-        //return view('fileview')->with('filename', $filename);
-        //return self::getUrl('img', $filename);
-        // return response()->download(public_path('file/syarat/faiz/ss.png'));
+        return response()->file('file/syarat/' . $nama . '/' . $filename);
     }
 }
