@@ -76,25 +76,25 @@
         </div>
     </nav>
 
-    <table class="w-2/3 mx-5 mt-52 bg-yellow-200 rounded-lg">
-        <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
-            <th>button</th>
+    <table class="w-2/3 mx-5 mt-52 bg-yellow-200 rounded-lg overflow-hidden">
+        <tr class="bg-yellow-400">
+            <th>No.</th>
+            <th>Username</th>
+            <th>Sekolah</th>
+            <th>Jenjang</th>
+            <th>Lomba</th>
+            <th>Aksi</th>
         </tr>
+        @foreach ($users as $user)
         <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-            <td><a href="/admin2" class=" underline">halo</a></td>
+            <td>{{$user->id}}</td>
+            <td>{{$user->username}}</td>
+            <td>{{$user->sekolah}}</td>
+            <td>{{$user->jenjang}}</td>
+            <td>{{$user->lomba}}</td>
+            <td><a href="/admin/user-{{$user->id}}">Lihat</a><a>Hapus</a></td>
         </tr>
-        <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
-            <td><a href="/admin2" class="underline">halo</a></td>
-        </tr>
+        @endforeach
     </table>
 
 

@@ -7,6 +7,16 @@ use Illuminate\Http\Request;
 class FrontEndController extends Controller
 {
     //
+    public static function Main()
+    {
+        return view('welcome');
+    }
+
+    public static function Home()
+    {
+        return view('home');
+    }
+
     public static function Profile()
     {
         return view('profile');
@@ -20,6 +30,14 @@ class FrontEndController extends Controller
     public static function Login()
     {
         return view('login');
+    }
+
+    public static function Dashboard()
+    {
+        return view('dashboard', [
+            'competitions' => \App\Models\Competition::all(),
+            'participants' => \Illuminate\Support\Facades\Auth::user()->participants
+        ]);
     }
 
     public static function ForgotPassword()
@@ -37,18 +55,17 @@ class FrontEndController extends Controller
         return view('lomba');
     }
 
-    public static function Dashboard()
-    {
-        return view('dashboard', [
-            'competitions' => \App\Models\Competition::all(),
-            'participants' => \Illuminate\Support\Facades\Auth::user()->participants
-        ]);
-    }
-
     public static function Admin()
     {
         return view('admin', [
             'users' => \App\Models\User::all()
+        ]);
+    }
+
+    public static function Admin2($id)
+    {
+        return view('admin2', [
+            'user' => \App\Models\User::all()->where('id', $id)->first()
         ]);
     }
 

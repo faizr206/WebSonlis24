@@ -153,9 +153,9 @@ class BackEndController extends Controller
         return back();
     }
 
-    public static function Edit(Request $request)
+    public static function AdminEdit(Request $request, $id)
     {
-        $user = User::all()->where('id', $request->id)->first();
+        $user = User::all()->where('id', $id)->first();
         $user->update([
             'status' => $request->status,
             'comment' => $request->comment

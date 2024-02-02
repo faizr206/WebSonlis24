@@ -18,32 +18,14 @@ use App\Http\Controllers\BackEndController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontendController::class, 'Main']);
+Route::get('/home', [FrontendController::class, 'Home']);
+Route::get('/login', [FrontendController::class, 'Login'])->middleware('guest');
+Route::get('/register', [FrontendController::class, 'Register'])->middleware('guest');
+Route::get('/dashboard', [FrontendController::class, 'Dashboard'])->middleware('auth');
 
-Route::get('/home', function () {
-    return view('home');
-});
-
-Route::get('/login', function () {
-    return view('login');
-})->middleware('guest');
-
-Route::get('/register', function () {
-    return view('register')->middleware('guest');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
-Route::get('/admin', function () {
-    return view('admin');
-});
-Route::get('/admin2', function () {
-    return view('admin2');
-});
+Route::get('/admin', [FrontendController::class, 'Admin'])->middleware('admin');
+Route::get('/admin/user-{id}', [FrontEndController::class, 'Admin2'])->middleware('admin');
 
 Route::get('/admin2/file/{nama}/{filename}', [FileController::class, 'download']);
 
@@ -58,8 +40,6 @@ Route::get('/dashboard', [FrontEndController::class, 'Dashboard'])->middleware('
 Route::get('/admin', [FrontendController::class, 'Admin'])->middleware('auth')->middleware('admin');
 Route::get('/getParticipant', [FrontEndController::class, 'GetParticipant']);
 
-Route::get('/admin/{id}', [FrontEndController::class, 'User'])->middleware('admin');
-
 Route::post('/register', [BackEndController::class, 'Register']);
 Route::post('/login', [BackEndController::class, 'Login']);
 Route::post('/logout', [BackEndController::class, 'Logout']);
@@ -71,6 +51,6 @@ Route::post('/addParticipant', [BackEndController::class, 'AddParticipant']);
 Route::post('/saveParticipant', [BackendController::class, 'SaveParticipant']);
 Route::post('/deleteParticipant', [BackEndController::class, 'DeleteParticipant']);
 Route::post('/changeCompetition', [BackEndController::class, 'ChangeCompetition']);
-Route::post('/lomba/{team}', [BackEndController::class, 'Team'])->middleware('auth');
-Route::post('/admin/edit', [BackEndController::class, 'Edit'])->middleware('admin');
+
+Route::post('/admin/user-{id}/edit', [BackEndController::class, 'AdminEdit'])->middleware('admin');
 Route::post('/dashboard/peserta', [BackEndController::class, 'Dashboard_Participant']);

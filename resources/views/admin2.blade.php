@@ -79,16 +79,16 @@
         <div class="flex flex-col basis-1/2 items-start justify-start p-3 rounded-2xl bg-blue-200 my-10 mx-10">
             <div class="flex flex-col">
                 <div class="flex flex-row">
-                    <div>Sekolah : </div>
-                    <div>(nama sekolah)</div>
+                    <div><b>Email : </b>{{$user->email}}</div>
                 </div>
                 <div class="flex flex-row">
-                    <div>Lomba : </div>
-                    <div>(nama lomba)</div>
+                    <div><b>Sekolah : </b>{{$user->sekolah}}</div>
                 </div>
                 <div class="flex flex-row">
-                    <div>dll </div>
-                    <div>(dll)</div>
+                    <div><b>Jenjang : </b>{{$user->jenjang}}</div>
+                </div>
+                <div class="flex flex-row">
+                    <div><b>Lomba : </b>{{$user->lomba}}</div>
                 </div>
             </div>
             <table class="my-5">
@@ -96,31 +96,32 @@
                     <th>Nama</th>
                     <th>Kartu Pelajar</th>
                 </tr>
+                @foreach ($user->participants as $participant)
                 <tr>
-                    <td>Rempah</td>
+                    <td>{{$participant->name}}</td>
                     <td><a href="/admin2/file/nama/namafile.extension" class="underline" target="_blank">ini</a></td>
                 </tr>
-                <tr>
-                    <td>Rempahhhhh</td>
-                    <td><a href="#" class="underline">ini</a></td>
-                </tr>
+                @endforeach
             </table>
         </div>
         <div class="flex flex-col items-start rounded-2xl justify-start p-3 bg-red-200 mx-10">
-            <form action="" class="space-y-2">
+            <form method="POST" action="/admin/user-{{$user->id}}/edit" class="space-y-2">
+                @csrf
                 <div>
                     <label for="">Status :</label>
-                    <select name="" id="" class="rounded-md p-1">
-                        <option value="">valid</option>
-                        <option value="">tidak valid</option>
+                    <select name="status" id="" class="rounded-md p-1">
+                        <option @if($user->status == 'Belum') selected @endif>Belum</option>
+                        <option @if($user->status == 'Menunggu') selected @endif>Menunggu</option>
+                        <option @if($user->status == 'Valid') selected @endif>Valid</option>
+                        <option @if($user->status == 'Tidak Valid') selected @endif>Tidak Valid</option>
                     </select>
                 </div>
                 <div>
                     <label for="">Deskripsi (bila tidak valid) : </label>
-                    <input type="text" name="" id="">
+                    <input type="text" name="comment" id="" value="{{$user->comment}}">
                 </div>
                 <div class=" items-end justify-end">
-                    <button type="submit" class="bg-red-400 rounded-md hover:opacity-70 p-1">Submit</button>
+                    <button type="submit" class="bg-red-400 rounded-md hover:opacity-70 p-1">save</button>
                 </div>
             </form>
         </div>
