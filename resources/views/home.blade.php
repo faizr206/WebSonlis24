@@ -17,25 +17,26 @@
     {{-- @yield('navbar') --}}
     <nav class="h-15 flex justify-center items-center lg:pt-10 w-full sticky top-0 lg:fixed drop-shadow-sm"
         style="z-index: 100708">
-        <div class="nav-cont bg-white w-full h-full lg:w-1/2 lg:rounded-full lg:h-12 px-5">
-            <ul class=" lg:flex lg:justify-between h-full py-3 px-4 lg:px-10 font-bold">
-                <li class="nav-logo sm:max-md:order-first flex justify-between items-center">
-                    <div class="nav-sm-left">
-                        <a href="#home" class="flex justify-start items-center gap-2">
-                            <span class="hidden lg:flex">
+        <div class="nav-cont bg-white w-full h-full lg:w-4/6 xl:w-1/2 lg:rounded-full lg:h-12 px-5">
+            <ul
+                class=" lg:grid lg:grid-cols-5 lg:items-center space-y-2 lg:space-y-0 lg:justify-between h-full py-3 lg:py-0 px-4 lg:px-10 font-bold ">
+                <li class="nav-logo  sm:max-md:order-first grid grid-cols-2 lg:flex  justify-center  items-center ">
+                    <div class="nav-sm-left lg:flex lg:items-center  items-start lg:justify-center ">
+                        <a href="#home" class="flex justify-start items-center gap-2 ">
+                            <span class="hidden lg:flex ">
                                 <span
-                                    class="h-[85px] w-[85px] hover:h-[95px] hover:w-[95px] transition-all duration-300 bg-white rounded-full drop-shadow-lg grid place-content-center items-center">
+                                    class="h-[85px] w-[85px] hover:h-[95px] hover:w-[95px] transition-all lg:-m-10 duration-300 bg-white rounded-full drop-shadow-lg grid place-content-center items-center">
                                     <img src="{{ url('/img/logoUtama.png') }}" alt="SL24"
                                         class="w-[70px] hover:w-[65px] transition-all">
                                 </span></span>
                             <span class="lg:hidden"><img src="{{ url('/img/logoUtama.png') }}" alt="SL24"
                                     class="h-14"></span>
-                            <span class="lg:hidden">
+                            <span class="lg:hidden ">
                                 <h1 class="font-bold font-sans text-xl">Sonic Linguistic</h1>
                             </span>
                         </a>
                     </div>
-                    <div class="nav-sm-right lg:hidden flex items-center">
+                    <div class="nav-sm-right lg:hidden flex justify-end items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -44,21 +45,19 @@
                     </div>
                 </li>
                 <div
-                    class="nav-left hidden lg:flex lg:flex-row flex-col lg:items-center lg:order-first gap-4 lg:gap-5 my-3 ms-1 me-1">
+                    class="nav-left hidden lg:col-span-2 lg:flex space-y-2 lg:space-y-0 lg:flex-row flex-col lg:items-center lg:justify-center w-full lg:order-first gap-4 lg:gap-5 my-0 ms-1 me-1">
                     <li><a href=#home
-                            class="lg:hover:bg-slate-200 rounded-lg duration-200 p-1 lg:decoration-4 transition-all decoration-[#ecb573]">HOME</a>
+                            class="lg:hover:bg-slate-200 rounded-lg  duration-200 p-1  transition-all ">HOME</a>
                     </li>
                     <li><a href="#competition"
-                            class="lg:hover:bg-slate-200 rounded-lg duration-200 p-1 lg:decoration-4 transition-all decoration-[#acc8e8]">COMPETITIONS</a>
+                            class="lg:hover:bg-slate-200 rounded-lg duration-200 p-1  transition-all ">COMPETITIONS</a>
                     </li>
                 </div>
                 <div
-                    class="nav-right hidden lg:flex lg:flex-row flex-col lg:items-center lg:order-last gap-4 lg:gap-5 my-3 ms-1 me-1">
-                    <li><a href="/register"
-                            class="underline underline-offset-4 decoration-wavy decoration-2 lg:no-underline lg:hover:bg-slate-200 rounded-lg duration-200 p-1 lg:decoration-solid lg:decoration-4 decoration-[#df8583]">REGISTER</a>
+                    class="nav-right hidden lg:col-span-2 lg:flex space-y-2 lg:space-y-0 lg:flex-row flex-col lg:items-center lg:justify-center lg:order-last gap-4 lg:gap-5 my-0 ms-1 me-0">
+                    <li><a href="/register" class=" lg:hover:bg-slate-200  rounded-lg duration-200 p-1  ">REGISTER</a>
                     </li>
-                    <li><a href="/login"
-                            class="underline underline-offset-4 decoration-wavy decoration-2 lg:no-underline lg:hover:bg-slate-200 rounded-lg duration-200 p-1 lg:decoration-solid lg:decoration-4 decoration-[#9cb571]">LOGIN</a>
+                    <li><a href="/login" class=" lg:hover:bg-slate-200 rounded-lg duration-200 p-1 ">LOGIN</a>
                     </li>
                 </div>
             </ul>
@@ -74,7 +73,7 @@
         <div class="flex flex-col items-center justify-center md:text-3xl text-[3vw] z-10 pt-[5vw]">
             <img src="{{ url('img/registration.svg') }}" class="res w-[50%] -translate-y-[2vw] pb-0 md:pb-[3vw]"
                 alt="">
-            <div id="countdown" class="flex justify-center font-motley text-[#7fb051]">
+            <div id="countdownn" class="flex justify-center font-motley text-[#7fb051]">
                 <ul class="w-[75vw] grid grid-cols-7 items-center justify-center">
                     <li class="countdown"><span class="cntnum" id="days"></span>days</li>
                     <li class="countdown">/</li>
@@ -85,14 +84,12 @@
                     <li class="countdown"><span class="cntnum" id="seconds"></span>Seconds</li>
                 </ul>
             </div>
-            <div id="content" class="emoji hidden">
-                <span>🥳</span>
-                <span>🎉</span>
-                <span>🎂</span>
+            <div id="content" class="font-motley text-[#7fb051] text-[6vw] md:text-[8vw] emoji hidden">
+                CLOSED
             </div>
         </div>
         <div class="" id="competition">
-            <div class="w-full">
+            <div class="w-full ">
                 <img src="{{ url('/img/batasBawah.png') }}" class="overlap-show w-full">
             </div>
         </div>
@@ -416,7 +413,9 @@
                         <div id="four-six"
                             class="absolute lombacard drop-shadow-xl left-[44vw] sm:left-[45vw] md:left-[46vw] lg:left-[47vw] z-50 -rotate-12 four-six card">
                             <div class="content">
-                                <div class="front">
+                                <div class="relative front">
+                                    <div class="absolute w-full h-full text-center align-middle my-auto">Khusus SMA
+                                    </div>
                                     <img src="{{ url('/img/lomba/ldbi.png') }}" class="w-full" alt="">
                                 </div>
                                 <div
@@ -477,9 +476,8 @@
                 <img src="{{ url('img/aboutBawah.svg') }}" alt="" class="z-30 p-[2vw] md:p-[1vw]">
             </div>
         </div>
-        <div class="relative">
-            <img src="{{ url('img/batasBawah2.svg') }}" class="absolute -translate-y-[5vw] xl:-translate-y-[4.2vw]"
-                alt="">
+        <div class="flex items-center justify-center h-auto w-full z-50 bg-[#aee1f0]">
+            <img src="{{ url('img/batasBawah2.svg') }}" class="w-full z-50 min-w-[50rem]" alt="">
         </div>
         <footer class="bg-[#336b91] flex flex-col justify-center items-center">
             <div class="flex flex-col lg:flex-row justify-between w-3/4 mt-[150px]">
