@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin2</title>
+    <title>User</title>
     @vite('resources/css/app.css')
 
-    <link rel="stylesheet" href="{{ url('/css/home.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url('img/logoIcon.ico') }}">
     <script src="https://kit.fontawesome.com/e2e4af9857.js" crossorigin="anonymous"></script>
 
 
@@ -75,16 +75,29 @@
         </div>
     </nav>
 
-    <div class="flex flex-row items-center justify-center mt-52">
-        <div class="flex flex-col basis-1/2 items-start justify-start p-3 rounded-2xl bg-blue-200 my-10 mx-10">
+    <div class="grid grid-cols-3 items-center justify-center mt-52">
+        <div
+            class="flex flex-col col-span-2 basis-1/2 items-start justify-start p-3 rounded-2xl bg-blue-200 my-10 mx-10">
             <div class="flex flex-col">
                 <div class="flex flex-row">
-                    <div>Sekolah : </div>
-                    <div>(nama sekolah)</div>
+                    <div>Username : &nbsp</div>
+                    <div>{{ $user['username'] }}</div>
                 </div>
                 <div class="flex flex-row">
-                    <div>Lomba : </div>
-                    <div>(nama lomba)</div>
+                    <div>Email : &nbsp</div>
+                    <div>{{ $user['email'] }}</div>
+                </div>
+                <div class="flex flex-row">
+                    <div>Jenjang : &nbsp</div>
+                    <div>{{ $user['jenjang'] }}</div>
+                </div>
+                <div class="flex flex-row">
+                    <div>Sekolah : &nbsp</div>
+                    <div>{{ $user['sekolah'] }}</div>
+                </div>
+                <div class="flex flex-row">
+                    <div>Lomba : &nbsp</div>
+                    <div>{{ $user['lomba'] }}</div>
                 </div>
                 <div class="flex flex-row">
                     <div>dll </div>
@@ -94,31 +107,41 @@
             <table class="my-5">
                 <tr>
                     <th>Nama</th>
-                    <th>Kartu Pelajar</th>
+                    @if ($user['lomba'] == 'Mobile Legend')
+                        <th>ID Akun</th>
+                        <th>Nickname Akun</th>
+                    @endif
                 </tr>
-                <tr>
-                    <td>Rempah</td>
-                    <td><a href="/admin2/file/nama/namafile.extension" class="underline" target="_blank">ini</a></td>
-                </tr>
-                <tr>
-                    <td>Rempahhhhh</td>
-                    <td><a href="#" class="underline">ini</a></td>
-                </tr>
+                @foreach ($user['participants'] as $participant)
+                    <tr>
+                        <th>{{ $participant->name }}</th>
+                        @if ($user['lomba'] == 'Mobile Legend')
+                            <th>{{ $participant->idAkun }}</th>
+                            <th>{{ $participant->nicknameAkun }}</th>
+                        @endif
+                    </tr>
+                @endforeach
             </table>
         </div>
-        <div class="flex flex-col items-start rounded-2xl justify-start p-3 bg-red-200 mx-10">
-            <form action="" class="space-y-2">
+        <div class="flex flex-col col-span-1 items-start rounded-2xl justify-start p-3 bg-red-200 mx-10">
+            <form action="/admin/edit" method="POST" class="space-y-2 w-full">
+                @csrf
                 <div>
                     <label for="">Status :</label>
-                    <select name="" id="" class="rounded-md p-1">
-                        <option value="">valid</option>
-                        <option value="">tidak valid</option>
+                    <select name="status" class="rounded-md p-1">
+                        <option value="{{ $user->status }}">{{ $user->status }}</option>
+                        <option value="Belum">Belum</option>
+                        <option value="Menunggu">Menunggu</option>
+                        <option value="Valid">Valid</option>
+                        <option value="Tidak Valid">Tidak Valid</option>
                     </select>
                 </div>
                 <div>
                     <label for="">Deskripsi (bila tidak valid) : </label>
-                    <input type="text" name="" id="">
+                    <textarea name="comment" id="" value="" class="block w-full p-1 rounded-md">
+{{ $user->comment }}</textarea>
                 </div>
+                <input type="hidden" name="id" value="{{ $user->id }}">
                 <div class=" items-end justify-end">
                     <button type="submit" class="bg-red-400 rounded-md hover:opacity-70 p-1">Submit</button>
                 </div>
@@ -127,7 +150,6 @@
     </div>
 
 
-    <script src="{{ url('/js/home.js') }}"></script>
 </body>
 
 </html>

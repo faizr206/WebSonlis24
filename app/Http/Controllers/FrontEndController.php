@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\User;
+use App\Models\Competition;
+use App\Models\Participant;
+
 class FrontEndController extends Controller
 {
     //
@@ -54,8 +58,8 @@ class FrontEndController extends Controller
 
     public static function User($id)
     {
-        return view('user', [
-            'user' =>\App\Models\User::all()->where('id', $id)->first()
+        return view('admin2', [
+            'user' => \App\Models\User::all()->where('id', $id)->first()
         ]);
     }
 

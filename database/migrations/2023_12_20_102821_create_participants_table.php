@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('user_id');
             $table->string('name');
-            $table->string('filepath')->nullable();
+            $table->string('idAkun');
+            $table->string('nicknameAkun');
+            // $table->string('filepath')->nullable();
             $table->timestamps();
         });
     }

@@ -8,6 +8,9 @@
 
 
 @layer components{
+    .hov{
+        @apply hover:opacity-70
+    }
     .res{
         @apply hover:scale-105 duration-200 ease-in-out
     }

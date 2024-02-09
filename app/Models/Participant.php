@@ -14,7 +14,8 @@ class Participant extends Model
     protected $fillable = [
         'user_id',
         'name',
-        'filepath'
+        'idAkun',
+        'nicknameAkun',
     ];
 
     public function user()

@@ -8,9 +8,8 @@
     <title>Admin</title>
     @vite('resources/css/app.css')
 
-    <link rel="stylesheet" href="{{ url('/css/home.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url('img/logoIcon.ico') }}">
     <script src="https://kit.fontawesome.com/e2e4af9857.js" crossorigin="anonymous"></script>
-
 
     <style>
         table,
@@ -65,40 +64,92 @@
                 </div>
                 <div
                     class="nav-right hidden lg:flex flex lg:flex-row flex-col lg:items-center lg:order-last gap-4 lg:gap-10 my-3 ms-1 me-4">
-                    <li><a href="/register"
+                    <li><a href="/dashboard"
                             class="underline underline-offset-4 decoration-wavy decoration-2 lg:no-underline lg:hover:bg-slate-200 rounded-lg duration-200 p-1 lg:decoration-solid lg:decoration-4 decoration-[#df8583]">DASHBOARD</a>
                     </li>
-                    <li><a href="/login"
-                            class="underline underline-offset-4 decoration-wavy decoration-2 lg:no-underline lg:hover:bg-slate-200 rounded-lg duration-200 p-1 lg:decoration-solid lg:decoration-4 decoration-[#9cb571]">LOGOUT</a>
+                    <li>
+                        <form action="/logout" method="post">@csrf<button type="submit"
+                                class="lg:hover:bg-slate-200 rounded-lg duration-200 p-1  transition-all">LOGOUT</button>
+                        </form>
                     </li>
                 </div>
             </ul>
         </div>
     </nav>
 
-    <table class="w-2/3 mx-5 mt-52 bg-yellow-200 rounded-lg">
+    <table class="inline-flex  w-2/3 mt-32 mx-5 bg-yellow-200 rounded-lg" id="table">
         <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
-            <th>button</th>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Jenjang</th>
+            <th>Sekolah</th>
+            <th>Lomba</th>
+            <th>Status</th>
         </tr>
-        <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-            <td><a href="/admin2" class=" underline">halo</a></td>
-        </tr>
-        <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
-            <td><a href="/admin2" class="underline">halo</a></td>
-        </tr>
+        @foreach ($users as $user)
+            <tr>
+                <td>{{ $user['id'] }}</td>
+                <td>{{ $user['username'] }}</td>
+                <td>{{ $user['email'] }}</td>
+                <td>{{ $user['jenjang'] }}</td>
+                <td>{{ $user['sekolah'] }}</td>
+                <td>{{ $user['lomba'] }}</td>
+                <td>{{ $user['status'] }}</td>
+                <td><a href="/admin/{{ $user['id'] }}" target="blank" class="underline hov">halo</a></td>
+            </tr>
+        @endforeach
     </table>
+    <div class="inline-flex w-3/12 flex-col bg-slate-200 rounded-xl p-2">Filter
+        <div class="rounded-md p-0 border-black border-0">
+            Lomba
+            <select name="" id="fLomba" onchange="filterLomba()">
+                <option value="">all</option>
+                <option value="">Science Competition</option>
+                <option value="">Smart and Quick</option>
+                <option value="">Social Competition</option>
+                <option value="">Mathematics Competition</option>
+                <option value="">LDBI</option>
+                <option value="">NSDC</option>
+                <option value="">Speech Contest</option>
+                <option value="">Cipta Baca Puisi</option>
+                <option value="">Khitobah</option>
+                <option value="">Monolog</option>
+                <option value="">Story-telling</option>
+                <option value="">Essay Writing Competition</option>
+                <option value="">Short Movie</option>
+                <option value="">Photography</option>
+                <option value="">Lomba Karya Inovasi</option>
+                <option value="">Music Cover</option>
+                <option value="">Mobile Legend Competition</option>
+                <option value="">Soccer</option>
+                <option value="">Ratoeh Jaroe</option>
+                <option value="">Pramuka</option>
+            </select>
+        </div>
+        <div class="rounded-md p-0 border-black border-0">
+            Jenjang
+            <select name="" id="fJenjang" onchange="filterJenjang()">
+                <option value="">all</option>
+                <option value="">smp</option>
+                <option value="">sma</option>
+                <option value="">umum</option>
+            </select>
+        </div>
+        <div class="rounded-md p-0 border-black border-0">
+            Status
+            <select name="" id="fStatus" onchange="filterStatus()">
+                <option value="">all</option>
+                <option value="">Belum</option>
+                <option value="">Menunggu</option>
+                <option value="">Valid</option>
+                <option value="">Tidak Valid</option>
+            </select>
+        </div>
+    </div>
+    </div>
 
-
-    <script src="{{ url('/js/home.js') }}"></script>
+    <script src="{{ url('js/admin.js') }}"></script>
 </body>
 
 </html>

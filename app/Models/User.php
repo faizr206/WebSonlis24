@@ -27,6 +27,8 @@ class User extends Authenticatable
         'sekolah',
         'jenjang',
         'lomba',
+        'anggota',
+        'drivePath',
         'admin',
         'status',
         'comment'

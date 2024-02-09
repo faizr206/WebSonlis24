@@ -25,10 +25,16 @@ function load() {
     smp();
 }
 
-const adasmp = ["one-one", "one-two", "one-three", "one-four", "three-five"];
+const adasmp = [
+    "one-one",
+    "one-two",
+    "one-three",
+    "one-four",
+    "three-five",
+    "four-five",
+];
 const adasma = [
     "four-six",
-    "four-five",
     "two-one",
     "three-one",
     "three-three",
@@ -71,10 +77,12 @@ const adaall = [
 function enable(str) {
     document.getElementById(str).style.filter = "brightness(100%)" + ds;
     document.getElementById(str).style.setProperty("--angle", "180deg");
+    document.getElementById(str + "-d").style.display = "none";
 }
 function disable(str) {
     document.getElementById(str).style.filter = "brightness(60%)" + ds;
     document.getElementById(str).style.setProperty("--angle", "0deg");
+    document.getElementById(str + "-d").style.display = "block";
 }
 
 function ceksmp(value) {
@@ -369,6 +377,6 @@ const navLeft = document.querySelector(".nav-left");
 const navRight = document.querySelector(".nav-right");
 
 hamburger.addEventListener("click", () => {
-    navLeft.classList.toggle('hidden');
-    navRight.classList.toggle('hidden');
-})
+    navLeft.classList.toggle("hidden");
+    navRight.classList.toggle("hidden");
+});

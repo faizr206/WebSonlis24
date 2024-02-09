@@ -1,83 +1,105 @@
 let participants = document.getElementById("participants");
 let tambahPeserta = document.getElementById("tambahPeserta");
-let lomba = document.getElementById("lomba")
+let lomba = document.getElementById("lomba");
 
-function TambahPeserta(csrf, userId)
-{
+function TambahPeserta(csrf, userId) {
     let addParticipant = new XMLHttpRequest();
-    addParticipant.onload = ()=>{
+    addParticipant.onload = () => {
         UpdateParticipant();
     };
 
     addParticipant.open("POST", "/addParticipant");
-    addParticipant.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    addParticipant.setRequestHeader(
+        "Content-type",
+        "application/x-www-form-urlencoded"
+    );
     addParticipant.setRequestHeader("X-CSRF-Token", csrf);
     addParticipant.send();
 }
 
-function GantiNama(csrf, peserta)
-{
+function GantiNama(csrf, peserta) {
     let changeName = new XMLHttpRequest();
-    changeName.onload = ()=>{
-        
-    };
+    changeName.onload = () => {};
 
     let nama = document.getElementById("participant" + peserta);
     //let kartuPelajar = document.getElementById("kartuPelajar" + peserta);
 
     changeName.open("POST", "/addParticipant");
-    changeName.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    changeName.setRequestHeader(
+        "Content-type",
+        "application/x-www-form-urlencoded"
+    );
     changeName.setRequestHeader("X-CSRF-Token", csrf);
     changeName.send();
 }
 
-function GantiLomba(csrf, lombaSekarang)
-{
-    if(confirm("Ingin mengganti lomba menjadi " + lomba.value + "?\n(Semua peserta yang sudah ditambahkan akan dihapus!)"))
-    {
+function GantiLomba(csrf, lombaSekarang) {
+    if (
+        confirm(
+            "Ingin mengganti lomba menjadi " +
+                lomba.value +
+                "?\n(Semua peserta yang sudah ditambahkan akan dihapus!)"
+        )
+    ) {
         let changeCompetition = new XMLHttpRequest();
-        changeCompetition.onload = ()=>{
+        changeCompetition.onload = () => {
             UpdateParticipant();
         };
         changeCompetition.open("POST", "/changeCompetition");
-        changeCompetition.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        changeCompetition.setRequestHeader(
+            "Content-type",
+            "application/x-www-form-urlencoded"
+        );
         changeCompetition.setRequestHeader("X-CSRF-Token", csrf);
         changeCompetition.send("competition=" + lomba.value);
-    }
-    else
-    {
+    } else {
         lomba.value = lombaSekarang;
     }
 }
 
-function SaveParticipant(csrf, participantId)
-{
-    let participantName = document.getElementById("participant" + participantId).value;
-
+function SaveParticipant(csrf, participantId) {
+    let participantName = document.getElementById(
+        "participant" + participantId
+    ).value;
+    let idAkun = document.getElementById("idAkun" + participantId).value;
+    let nicknameAkun = document.getElementById(
+        "nicknameAkun" + participantId
+    ).value;
     let saveParticipant = new XMLHttpRequest();
-    saveParticipant.onload = ()=>{
+    saveParticipant.onload = () => {
         UpdateParticipant();
-    }
+    };
     saveParticipant.open("POST", "/saveParticipant");
-    saveParticipant.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    saveParticipant.setRequestHeader(
+        "Content-type",
+        "application/x-www-form-urlencoded"
+    );
     saveParticipant.setRequestHeader("X-CSRF-Token", csrf);
-    saveParticipant.send("participantId=" + participantId + "&participantName=" + participantName);
+    saveParticipant.send(
+        "participantId=" +
+            participantId +
+            "&participantName=" +
+            participantName +
+            "&idAkun=" +
+            idAkun +
+            "&nicknameAkun=" +
+            nicknameAkun
+    );
+    alert("changes saved");
 }
 
-function DeleteParticipant(csrf, participantId)
-{
+function DeleteParticipant(csrf, participantId) {
     let xHttp = new XMLHttpRequest();
-    xHttp.onload = ()=>{
+    xHttp.onload = () => {
         UpdateParticipant();
-    }
+    };
     xHttp.open("POST", "/deleteParticipant");
     xHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xHttp.setRequestHeader("X-CSRF-Token", csrf);
     xHttp.send("participantId=" + participantId);
 }
 
-function UpdateParticipant()
-{
+function UpdateParticipant() {
     let getParticipant = new XMLHttpRequest();
     getParticipant.onload = () => {
         participants.innerHTML = getParticipant.responseText;

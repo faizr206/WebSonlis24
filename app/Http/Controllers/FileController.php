@@ -9,8 +9,12 @@ use Illuminate\Support\Facades\URL;
 
 class FileController extends Controller
 {
-    public function download($nama, $filename)
+    public function download($filename)
     {
-        return response()->file('file/syarat/' . $nama . '/' . $filename);
+        return response()->file('file/' . $filename);
+    }
+    public function juknis($filename)
+    {
+        return response()->file('file/juknis/' . $filename);
     }
 }

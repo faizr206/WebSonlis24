@@ -31,8 +31,8 @@ Route::get('/login', function () {
 })->middleware('guest');
 
 Route::get('/register', function () {
-    return view('register')->middleware('guest');
-});
+    return view('register');
+})->middleware('guest');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -45,12 +45,14 @@ Route::get('/admin2', function () {
     return view('admin2');
 });
 
+Route::get('/file/{filename}', [FileController::class, 'download']);
+Route::get('/juknis/{filename}', [FileController::class, 'juknis']);
 Route::get('/admin2/file/{nama}/{filename}', [FileController::class, 'download']);
 
 Route::get('/upload/{nama}', [UploadController::class, 'upload'])->name('upload');
 Route::post('/uploads/{nama}', [UploadController::class, 'uploadPost'])->name('upload.post');
 
-Route::get('/profile', [FrontEndController::Class, 'Profile'])->middleware('auth');
+Route::get('/profile', [FrontEndController::class, 'Profile'])->middleware('auth');
 Route::get('/forgotPassword', [FrontEndController::class, 'ForgotPassword'])->middleware('guest');
 Route::get('/resetPassword', [FrontEndController::class, 'ResetPassword'])->name('password.reset')->middleware('guest');
 Route::get('/lomba', [FrontEndController::class, 'Lomba'])->middleware('auth');
@@ -74,3 +76,6 @@ Route::post('/changeCompetition', [BackEndController::class, 'ChangeCompetition'
 Route::post('/lomba/{team}', [BackEndController::class, 'Team'])->middleware('auth');
 Route::post('/admin/edit', [BackEndController::class, 'Edit'])->middleware('admin');
 Route::post('/dashboard/peserta', [BackEndController::class, 'Dashboard_Participant']);
+
+Route::post('/updateDrive', [BackEndController::class, 'UpdateDrive']);
+Route::post('/submit', [BackEndController::class, 'Submit']);
